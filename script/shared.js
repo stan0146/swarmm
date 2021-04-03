@@ -28,7 +28,7 @@ class AccountList
     }
 
 
-    getAccountLitst(){return this._accountList;}
+    getAccountList(){return this._accountList;}
     getAccount(index){return this._accountList[index];}
     
     addAccount(index, email,password)
@@ -81,7 +81,7 @@ function updateIndex(index)
 {
   if (typeof(Storage) !== "undefined")
   {
-    localStorage.setItem(`${INDEX_KEY}`,JSON.stringify(email));
+    localStorage.setItem(`${INDEX_KEY}`,JSON.stringify(index));
   }
   else
   {

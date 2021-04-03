@@ -14,7 +14,7 @@ function password(){
 
 
 
-function al (){
+function click_signup(){
 let index="";
 if (accountList._accountList.length==0)
       {
