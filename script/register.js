@@ -7,16 +7,17 @@ function email(){
     }
 
 function password(){
-    let password = document.getElementById("psw").value;
-    return password
-    //updatePassword(password)
+    let pwd = document.getElementById("psw").value;
+    console.log(pwd);
+    updatePassword(pwd);
 }
 
 function repeatpwd(){
   let repeatpassword= document.getElementById("repeatpwd").value;
-  if (password==repeatpassword)
+  let pwd=getPassword();
+  if (pwd==repeatpassword) //fix bug
   {
-    updatePassword(password)
+    updatePassword(repeatpassword)
   }
 
   else {
