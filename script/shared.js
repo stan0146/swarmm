@@ -31,6 +31,7 @@ class AccountList
 
     getAccountList(){return this._accountList;}
     getAccount(index){return this._accountList[index];}
+    getlength() {return this._accountList.length}
     
     addAccount(index, email,password)
     {
@@ -59,6 +60,8 @@ class AccountList
 }
 
 let accountList= new AccountList;
+    
+    
 
 function updateAccountList(accountList)
 {
@@ -146,3 +149,5 @@ function checkIfDataExistsLocalStorage()
     return false;
   }
 }
+
+

@@ -17,14 +17,17 @@ function link(){
 }
 
 function click_signup(){
-let index="";
-
+index="";
 
 let list=getAccountList();
-accountList.fromData(list);
+console.log(list)
+if (list!=null){
+  accountList.fromData(list);
+}
+
+
 if (accountList._accountList.length>0)
       {
-        
         index=accountList._accountList[accountList._accountList.length-1]._index+1;
       }
 else {
