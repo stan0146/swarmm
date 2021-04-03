@@ -55,19 +55,13 @@
           <p>Please fill in this form to create an account.</p>
           
           <label for="email">Email</label>
-          <input type="text" placeholder="Enter Email" id="email" onchange="email()" >
+          <input type="text" placeholder="Enter Email" id="email" onchange="email()" required >
       
           <label for="psw"><b>Password</b></label>
-          <input type="text" placeholder="Enter Password" id="psw" onchange="password()" >
+          <input type="text" placeholder="Enter Password" id="psw" onchange="password()" required >
       
           <label for="psw-repeat"><b>Repeat Password</b></label>
-          <input type="text" placeholder="Repeat Password" name="psw-repeat" >
-      
-          <label>
-            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
-          </label>
-      
-          <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+          <input type="text" placeholder="Repeat Password" id="repeatpwd" onchange="repeatpwd()" required>
       
           <div class="clearfix">
             <button type="button" id="cancelbtn">Cancel</button>
@@ -78,11 +72,8 @@
       <script>
         let cancelRef= document.getElementById("cancelbtn");
         cancelRef.addEventListener("click",function(){ window.location="index.html"});
-        
-        let signRef= document.getElementById("signupbtn")
-        signRef.addEventListener("click",function(){ 
-        window.location="profile.html";
-        })</script>
+        </script>
+
     </main>
   </div>
   <script type="text/javascript" src="script/shared.js"></script>

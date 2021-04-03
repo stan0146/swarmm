@@ -2,6 +2,7 @@ const ACCOUNT_DATA_KEY="accountData";
 const EMAIL_KEY=  "email";
 const PASSWORD_KEY="password";
 const INDEX_KEY="index";
+const ACCOUNT_LIST_KEY="accountList"
 
 class Account
 {
@@ -15,7 +16,7 @@ class Account
     getPassword(){return this._password}
 
     fromData(data){
-        this._index=data._data
+        this._index=data._index
         this._email=data._email
         this._password=data._password
     }
@@ -30,6 +31,7 @@ class AccountList
 
     getAccountList(){return this._accountList;}
     getAccount(index){return this._accountList[index];}
+    getlength() {return this._accountList.length}
     
     addAccount(index, email,password)
     {
@@ -58,6 +60,8 @@ class AccountList
 }
 
 let accountList= new AccountList;
+    
+    
 
 function updateAccountList(accountList)
 {
@@ -145,4 +149,5 @@ function checkIfDataExistsLocalStorage()
     return false;
   }
 }
+
 
