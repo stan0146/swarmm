@@ -18,12 +18,17 @@ function link(){
 
 function click_signup(){
 let index="";
-if (accountList._accountList.length==0)
+
+
+let list=getAccountList();
+accountList.fromData(list);
+if (accountList._accountList.length>0)
       {
-        index=0;
+        
+        index=accountList._accountList[accountList._accountList.length-1]._index+1;
       }
 else {
-        index=accountList._accountList[accountList._accountList.length-1]._index+1;
+        index=0;
       }
 
 
