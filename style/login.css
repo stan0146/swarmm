@@ -1,11 +1,9 @@
 
-html {
-    height: 100%;
-  }
+
   
   #main-holder {
     width: 50%;
-    height: 70%;
+    height: 100%;
     display: grid;
     justify-items: center;
     align-items: center;

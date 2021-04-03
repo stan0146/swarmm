@@ -5,65 +5,99 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <link rel="stylesheet" href="style/try.css">
+
+  <link rel="stylesheet" href="style/nav.css">
+  <link rel="stylesheet" href="style/index.css">
   <title>Swarmm</title>
 </head>
 
 <body>
-  <!-- Always shows a header, even in smaller screens. (FIXED HEADER) -->
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-        <!-- Title -->
-        <span class="mdl-layout-title">
-          <a class="mdl-navigation__link" href="index.html">
-            <h3>Swarmm</h3>
-          </a>
-        </span>
-        <!-- Add spacer, to align navigation to the right -->
-        <div class="mdl-layout-spacer"></div>
-        <!-- Navigation. We hide it in small screens. -->
-        <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="profile.html">Profile</a>
-          <a class="mdl-navigation__link" href="allEvents.html">All events</a>
-          <a class="mdl-navigation__link" href="createEvent.html">Create new event</a>
-          <a class="mdl-navigation__link" href="login.html">Log in</a>
-          <a class="mdl-navigation__link" href="createAccount.html">Register</a>
-        </nav>
+  <nav>
+    <div class="nav-bar">
+      <a href="index.html">
+        <h1 class="nav-header"><b>swarm</b></h1>
+      </a>
+      <div class="nav-links">
+        <ul>
+          <li><a href="login.html">
+              <button class="loginbtn">Log in</button>
+            </a></li>
+          <br>
+          <li>
+            <a href="createAccount.html">
+              <button class="getstarted">Get started</button>
+            </a>
+          </li>
+          </li>
+        </ul>
       </div>
-    </header>
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">Swarmm</span>
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="profile.html">Profile</a>
-        <a class="mdl-navigation__link" href="allEvents.html">All events</a>
-        <a class="mdl-navigation__link" href="createEvent.html">Create new event</a>
-        <a class="mdl-navigation__link" href="login.html">Log in</a>
-        <a class="mdl-navigation__link" href="createAccount.html">Register</a>
-      </nav>
+
     </div>
-    <main class="mdl-layout__content">
-      <div class="page-content">
-        <h4>Hello everyone! </h4>
-        <h5>This is a website that will allow you to easily find the perfect time to meet with your team, friends and
-          family</h5>
+  </nav>
+
+
+  <div class="page-content">
+
+ 
+
+      <div class="section1">
+
+      <div class="mdl-cell mdl-cell--10-col">
+        <br><br><br><br>
+        <h1 class="heading1">Swarm is the <br> <u> bee's knees </u> <br> for meetings </h1>
+
       </div>
 
-      <button type="button" class="login">
-        <a class="login" href="login.html">login</a>
-      </button>
 
-      <button type="button" class="signup">
-        <a class="signup" href="createAccount.html">Sign up</a>
-      </button>
+      <div class="mdl-cell mdl-cell--10-col">
+
+        <p class="body2">The most simple and intuitive planner to schedule <br>meetups when everyone is availble.</p>
+        
+        <div id="position">  <button type="button" class="signup">
+          <a class="signup" href="createAccount.html">Sign up</a>
+        </button></div>
+      
+      </div>
+      <br><br>
+
+    </div>
+
+      <div class="mdl-cell mdl-cell--12-col">
+        <br><br>
+        <p id=mini>Your WFH productivity is about to reach a whole new level</p>
+      </div>
 
 
-    </main>
+    </div>
+
+    <br><br><br>
+
   </div>
-<script src="script/shared.js"></script>
+
+  <div>
+    <img class="bee" src="images/bee.png" style="width: 20%; margin-left: 4cm; margin-top: 2cm;">
+
+    <img class="bee" src="images/bee.png" style="width: 20%; margin-top: 2cm; margin-left: 2cm;">
+
+    <img class="bee" src="images/bee.png" style="width: 20%; margin-top: 2cm; margin-left: 2cm;">
+  </div>
+  <br><br><br>
+  <section class="section1">
+    <br><br><br><br><br>
+    <p id="footnote"> Meetings have never <br> been easier.</p>
+    <br><br><br><br><br><br>
+  </section>
+
+
+
+
+
+  <script src="script/shared.js"></script>
 </body>
 
 </html>

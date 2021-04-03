@@ -5,63 +5,53 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+  <link rel="stylesheet" href="style/nav.css">
   <link rel="stylesheet" href="style/login.css">
   <title>Swarmm</title>
 </head>
 
 <body>
-  <!-- Always shows a header, even in smaller screens. (FIXED HEADER) -->
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-        <!-- Title -->
-        <span class="mdl-layout-title">
-          <a class="mdl-navigation__link" href="index.html">
-            <h3>Swarmm</h3>
-          </a>
-        </span>
-        <!-- Add spacer, to align navigation to the right -->
-        <div class="mdl-layout-spacer"></div>
-        <!-- Navigation. We hide it in small screens. -->
-        <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="profile.html">Profile</a>
-          <a class="mdl-navigation__link" href="allEvents.html">All events</a>
-          <a class="mdl-navigation__link" href="createEvent.html">Create new event</a>
-          <a class="mdl-navigation__link" href="login.html">Log in</a>
-          <a class="mdl-navigation__link" href="createAccount.html">Register</a>
-        </nav>
+  <nav>
+    <div class="nav-bar">
+      <a href="index.html"><h1 class="nav-header"><b>swarm</b></h1></a>
+      <div class="nav-links">
+        <ul>
+          <li ><a href="login.html">
+            <button class="loginbtn">Log in</button>
+          </a></li>
+          <br>
+          <li>
+            <a href="createAccount.html">
+              <button class="getstarted">Get started</button>
+            </a></li>
+          </li>
+        </ul>
       </div>
-    </header>
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">Swarmm</span>
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="profile.html">Profile</a>
-        <a class="mdl-navigation__link" href="allEvents.html">All events</a>
-        <a class="mdl-navigation__link" href="createEvent.html">Create new event</a>
-        <a class="mdl-navigation__link" href="login.html">Log in</a>
-        <a class="mdl-navigation__link" href="createAccount.html">Register</a>
-      </nav>
+
     </div>
+  </nav>
 
-    <!--SAMPLE LOG IN COMPONENT-->
+<div>
+  <h1 id="login-header">Login</h1>
+        
+  <div id="login-error-msg-holder">
+    <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+  </div>
+  
+  <form id="login-form">
+    <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
+    <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
+    <input type="submit" value="Login" id="login-form-submit">
+  </form>
+</div>
 
-      <main id="main-holder">
-        <h1 id="login-header">Login</h1>
-        
-        <div id="login-error-msg-holder">
-          <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
-        </div>
-        
-        <form id="login-form">
-          <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
-          <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
-          <input type="submit" value="Login" id="login-form-submit">
-        </form>
       
-      </main>
       
   </div>
   <script src="script/shared.js"></script>

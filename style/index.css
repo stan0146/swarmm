@@ -1,0 +1,67 @@
+.heading1 {
+    font-family: 'Inter', sans-serif;
+    font-size: 64px;
+    line-height: normal;
+    margin-left: 3cm;
+    color: #071773;
+
+}
+
+.body2 {
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 21px;
+    margin-left: 3cm;
+}
+
+.signup{
+
+    background: #FDB433;
+    border-radius: 26px;
+    height: 52px;
+    width: 180px;
+    left: 300px;
+    right: 1200px;
+    border-width: 0px;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 21px;
+    
+
+    
+    
+    }
+    
+.signup a{
+    text-decoration: none;
+    color: #071773;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 21px;
+
+}
+
+#mini {
+
+    align-content: center;
+    margin-left: 15cm;
+    font-family: 'Inter', sans-serif;
+    color: #071773;
+    font-size: 50px;
+    line-height: normal;
+
+}
+
+.section1{
+    background-color:#F4F7FF;
+    background-position: right bottom, left top;
+}
+
+#footnote{
+    text-align: centre;
+    margin-left: 15cm;
+}
+
+#position{
+    margin-left: 3cm;
+}
