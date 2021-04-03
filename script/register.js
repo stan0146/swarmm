@@ -8,9 +8,22 @@ function email(){
 
 function password(){
     let password = document.getElementById("psw").value;
-    console.log(password)
-    updatePassword(password)
+    return password
+    //updatePassword(password)
 }
+
+function repeatpwd(){
+  let repeatpassword= document.getElementById("repeatpwd").value;
+  if (password==repeatpassword)
+  {
+    updatePassword(password)
+  }
+
+  else {
+    alert('password does not match');
+  }
+}
+
 
 function link(){
   window.location="profile.html";
