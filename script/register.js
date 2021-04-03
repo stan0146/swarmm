@@ -12,7 +12,9 @@ function password(){
     updatePassword(password)
 }
 
-
+function link(){
+  window.location="profile.html";
+}
 
 function click_signup(){
 let index="";
@@ -28,5 +30,9 @@ else {
 accountList.addAccount(index,getEmail(),getPassword());
 updateAccountList(accountList)
 updateIndex(index);
+
+
+let signRef= document.getElementById("signupbtn")
+signRef.addEventListener("click",link())
 }
 
