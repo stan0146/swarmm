@@ -13,7 +13,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style/nav.css">
-  <link rel="stylesheet" href="style/events.css">
+  <link rel="stylesheet" href="style/allevents.css">
   <title>Swarmm</title>
 </head>
 
@@ -60,13 +60,13 @@
           </li>
           <li>
             <a href="profile.html">
-              <button class="useracc">My profile</button>
+              <button class="profile">My profile</button>
             </a>
           </li>
 
           <li>
-            <a href="events.html">
-              <button class="summaryevents">My events</button>
+            <a href="allEvents.html">
+              <button class="myevents">My events</button>
             </a>
           </li>
 
@@ -89,24 +89,32 @@
               font-family: 'Poppins', sans-serif;
               font-style: normal;
               font-weight: 500;
-              color: #071773;">All events</h3>
+              color: #071773;">My events</h3>
           
     
           <div class="mdl-cell mdl-cell--1-col">
             <a href="createEvent.html">
               <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"
-                style="width: 40px; height: 40px; min-width: initial; position:absolute ;top:4cm;left: 11cm; ">
+                style="width: 40px; height: 40px; min-width: initial; position:absolute ;top:4cm;left: 10cm; ">
                 <i class="material-icons">add</i>
               </button>
             </a>
           </div>
           
         </div>
-      <div id= "view">
+        
+      <div id= "view"></div>
 
+      <div style="  background-color: white; width: 10cm; margin-right: 3cm;
+      color:#071773;
+      font-family: 'Inter', sans-serif;
+      font-size: 17px;
+      line-height: 21px;
+      height: 2.1cm">
+        <br><br>
+        <p style="margin-left: 3cm;"> © 2021 Swarm. All rights reserved.</p>
+  <br>
       </div>
-      <br><br>
-
   
   <script src="script/shared.js"></script>
   <script src="script/allevent.js"></script>

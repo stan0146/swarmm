@@ -46,7 +46,7 @@ let eventdummy=[{
     line-height: 21px;
     color: #071773;" onclick="view()">View event</button> </a> 
     <br><br><br>
-    </div>`
+    </div> `
 
 
     }
