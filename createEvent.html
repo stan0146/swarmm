@@ -57,19 +57,6 @@
           <h1>Create new event</h1>
           <label for="eventname">Event Name:</label>
           <input type="text" id="eventname" name="eventname"><br><br>
-          <!-- timezone select via dropdown-->
-          <div class="ui-select selBox">
-            <label for="timezone">Choose your timezone</label>
-            <select name="timezone" id="timezone" style="width:400px">
-              <!-- dummy data, use api-->
-              <option></option>
-              <option>UTC+08:00 (AWST) — Western Australia, Indian Pacific</option>
-              <option>UTC+09:30 (ACST) — South Australia, Northern Territory, New South Wales (Yancowinna County)
-              </option>
-              <option>UTC+10:00 (AEST) — Queensland, New South Wales, Australian Capital Territory, Victoria, Tasmania
-              </option>
-            </select><br><br>
-          </div>
         </div>
       </div>
       <div class="mdl-grid">
@@ -83,36 +70,37 @@
           <br><br>
           <input type="submit" value="Create new event">
         </div>
-        <!-- right grid: choose availability, choose meeting hours-->
+        <!-- right grid: choose unavailability, choose meeting hours-->
         <div class="mdl-cell mdl-cell--6-col">
           <label for="availability">Choose your availability</label><br><br>
+          <div id="unavailability"></div>
           <table class="fixed_date">
             <tr style="height: 300px;">
               <th scope="row">Sat Apr 3</th>
-              <td class="time" id="cell2" onclick="fill()">12:00 am </td>
-              <td class="time" id="cell4" onclick="fill()">1:00 am</td>
-              <td class="time" id="cell6" onclick="fill()">2:00 am</td>
-              <td class="time" id="cell8" onclick="fill()">3:00 am</td>
-              <td class="time" id="cell10" onclick="fill()">4:00 am</td>
-              <td class="time" id="cell12" onclick="fill()">5:00 am</td>
-              <td class="time" id="cell14" onclick="fill()">6:00 am</td>
-              <td class="time" id="cell16" onclick="fill()">7:00 am</td>
-              <td class="time" id="cell18" onclick="fill()">8:00 am</td>
-              <td class="time" id="cell20" onclick="fill()">9:00 am</td>
-              <td class="time" id="cell22" onclick="fill()">10:00 am</td>
-              <td class="time" id="cell24" onclick="fill()">11:00 am</td>
-              <td class="time" id="cell26" onclick="fill()">12:00 am</td>
-              <td class="time" id="cell28" onclick="fill()">1:00 pm</td>
-              <td class="time" id="cell30" onclick="fill()">2:00 pm</td>
-              <td class="time" id="cell32" onclick="fill()">3:00 pm</td>
-              <td class="time" id="cell34" onclick="fill()">4:00 pm</td>
-              <td class="time" id="cell36" onclick="fill()">5:00 pm</td>
-              <td class="time" id="cell38" onclick="fill()">6:00 pm</td>
-              <td class="time" id="cell40" onclick="fill()">7:00 pm</td>
-              <td class="time" id="cell42" onclick="fill()">8:00 pm</td>
-              <td class="time" id="cell44" onclick="fill()">9:00 pm</td>
-              <td class="time" id="cell46" onclick="fill()">10:00 pm</td>
-              <td class="time" id="cell48" onclick="fill()">11:00 pm</td>
+              <td class="time" id="cell2" onclick="fill()" value="00:00">12:00 am </td>
+              <td class="time" id="cell4" onclick="fill()" value="01:00">1:00 am</td>
+              <td class="time" id="cell6" onclick="fill()" value="02:00">2:00 am</td>
+              <td class="time" id="cell8" onclick="fill()" value="03:00">3:00 am</td>
+              <td class="time" id="cell10" onclick="fill()" value="04:00">4:00 am</td>
+              <td class="time" id="cell12" onclick="fill()" value="05:00">5:00 am</td>
+              <td class="time" id="cell14" onclick="fill()" value="06:00">6:00 am</td>
+              <td class="time" id="cell16" onclick="fill()" value="07:00">7:00 am</td>
+              <td class="time" id="cell18" onclick="fill()" value="08:00">8:00 am</td>
+              <td class="time" id="cell20" onclick="fill()" value="09:00">9:00 am</td>
+              <td class="time" id="cell22" onclick="fill()" value="10:00">10:00 am</td>
+              <td class="time" id="cell24" onclick="fill()" value="11:00">11:00 am</td>
+              <td class="time" id="cell26" onclick="fill()" value="12:00">12:00 am</td>
+              <td class="time" id="cell28" onclick="fill()" value="13:00">1:00 pm</td>
+              <td class="time" id="cell30" onclick="fill()" value="14:00">2:00 pm</td>
+              <td class="time" id="cell32" onclick="fill()" value="15:00">3:00 pm</td>
+              <td class="time" id="cell34" onclick="fill()" value="16:00">4:00 pm</td>
+              <td class="time" id="cell36" onclick="fill()" value="17:00">5:00 pm</td>
+              <td class="time" id="cell38" onclick="fill()" value="18:00">6:00 pm</td>
+              <td class="time" id="cell40" onclick="fill()" value="19:00">7:00 pm</td>
+              <td class="time" id="cell42" onclick="fill()" value="20:00">8:00 pm</td>
+              <td class="time" id="cell44" onclick="fill()" value="21:00">9:00 pm</td>
+              <td class="time" id="cell46" onclick="fill()" value="22:00">10:00 pm</td>
+              <td class="time" id="cell48" onclick="fill()" value="23:00">11:00 pm</td>
             </tr>
           </table>
           <br><label for="eventtime">Choose your meeting hours</label><br>
@@ -158,9 +146,14 @@
     function fill() {
 
       id_info = event.target;
-      id = id_info.id
-      index = id.slice(4)
-      console.log(index)
+      id = id_info.id;
+      index = id.slice(4);
+      unavailability = [];
+      time = id_info.value;
+      console.log(time);
+      unavailability.push(time);
+      console.log(unavailability);
+      document.getElementById("unavailability").value = unavailability;
       document.getElementById(`cell${index}`).setAttribute("class", "busy");
 
     }
