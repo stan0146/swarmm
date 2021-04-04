@@ -39,14 +39,16 @@ body:not(nav){
 
   #profile_header{
     margin-left: 2cm;
-    font-family: 'Circular Std Book', Arial, sans-serif;
-    font-size: 56px;
-    line-height: normal;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
     color: #071773;
   }
 
   #my-detail{
       margin-left: 2cm;
+
 
   }
   .useracc{
@@ -78,3 +80,9 @@ body:not(nav){
     color: #071773;
     
   }
+.det{
+  color:#515363;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 20.57px;
+}
