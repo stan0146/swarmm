@@ -1,7 +1,6 @@
 @font-face {
     font-family: 'Circular Std Book';
-    src: url('http://swarmm.live/css/fonts/Circular-Std-Book.woff2') format('woff2'),
-        url('http://swarmm.live/css/fonts/Circular-Std-Book.woff') format('woff');
+    src: url(/fonts/Circular-Std-Book.woff) format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

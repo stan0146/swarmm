@@ -5,8 +5,11 @@ const INDEX_KEY="index";
 const ACCOUNT_LIST_KEY="accountList";
 const FNAME_KEY="fname";
 const LNAME_KEY="lname";
-const LOGIN_INDEX_KEY="loginIndex"
+const LOGIN_INDEX_KEY="loginIndex";
+const EVENT_INDEX = "eventindex";
+const EVENT_LIST = "eventlist";
 
+//ACCOUNTS CLASSES
 class Account
 {
     constructor(index, email, password,fname,lname){
@@ -15,12 +18,24 @@ class Account
         this._password=password;
         this._fname=fname;
         this._lname=lname;
+        this._eventsList = [];
     }
     getIndex() {return this._index}
     getEmail(){return this._email;}
     getPassword(){return this._password}
     getFname() {return this._fname}
     getLname(){return this._lname;}
+
+    //method: get user's events array
+    userEvents()
+    {
+      return this._eventsList;
+    }
+
+    removeEvent(index)
+    {
+      this._eventsList.splice(index,1);
+    }
 
     fromData(data){
         this._index=data._index
@@ -68,10 +83,79 @@ class AccountList
 
 }
 
-let accountList= new AccountList;
-    
-    
+//EVENTS CLASSES
+class Event
+{
+    constructor(eventName, date, unavailability, startTime, endTime){
+        this._eventName = eventName;
+        this._date = date;
+        this._unavailability = unavailability;
+        this._startTime = startTime;
+        this._endTime = endTime
+    }
+    getEventName() {return this._eventName;}
+    getDate() {return this._date;}
+    getUnavailability() {return this._unavailability;}
+    getStartTime() {return this._startTime;}
+    getEndTime() {return this._endTime;}
 
+    //mutators
+    set eventName(newName){this._eventName = newName;}
+    set date(newdate){this._date = newdate;}
+    set unavailability(newunav){this._unavailability = newunav;}
+    set startTime(newTime){this._startTime = newTime;}
+    set endTime(newTime){this._endTime = newTime;}
+
+    fromData(data){
+        this._eventName = data._eventName;
+        this._date = data._date;
+        this._unavailability = data._unavailability;
+        this._startTime = data._startTime;
+        this._endTime = data._endTime
+    }
+
+}
+
+class EventsList
+{
+    constructor(){
+        this._eventsList = [];
+    }
+    
+    getEventsList(){return this._eventsList;}
+    getEvent(index){return this._eventsList[index];}
+
+    addEvent(eventName, date, unavailability, startTime, endTime)
+    {
+        let event = new Event(eventName, date, unavailability, startTime, endTime);
+        this._eventsList.push(event);
+    }
+    
+    removeAccount(index)
+    {
+        this._eventsList.splice(index,1);
+    }
+  
+
+    fromData(data)
+    {
+        let dataArray=data._eventsList;
+        this._eventsList=[];
+        for (let i=0; i<dataArray.length;i++)
+        {
+          let event = new Event();
+          event.fromData(dataArray[i]);
+          this._eventsList.push(event);
+        }
+    }
+
+}
+
+//GLOBAL VARS
+let accountList= new AccountList;
+let eventList = new EventsList();
+    
+//FUNCTIONS RELATED TO ACCOUNTS
 function updateAccountList(accountList)
 {
     if (typeof(Storage) !== "undefined")
@@ -196,6 +280,26 @@ function getLoginIndex()
   return data;
 }
 
+// FUNCTIONS RELATED TO EVENTS
+function getEventsList()
+{
+  let data = JSON.parse(localStorage.getItem(`${EVENT_INDEX}`));
+  return data;
+}
+
+function updateEventIndex(index)
+{
+  if (typeof(Storage) !== "undefined")
+  {
+    localStorage.setItem(`${EVENT_INDEX}`,JSON.stringify(index));
+  }
+  else
+  {
+    console.log("localStorage is not supported by current browser.");
+  }
+}
+
+//LOCAL STOR FUNCTIONS
 function checkIfDataExistsLocalStorage()
 {
   let data =getAccountList();
