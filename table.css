@@ -1,12 +1,11 @@
 .busy{
-    background-color: royalblue;
+    background-color: #FDB433;
 }
 
 .selBox{
     width: 200px;
 }
 ul {list-style-type: none;}
-body {font-family: Verdana, sans-serif;}
 
 /* table */
 th[scope=row] {
