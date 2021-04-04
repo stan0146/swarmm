@@ -1,6 +1,5 @@
 body:not(nav){
   background: #F4F7FF;;
- font-family: 'Inter', sans-serif;
 }
 
 input[type=text], input[type=password],input[type=submit] {
@@ -28,13 +27,15 @@ input[type=text], input[type=password],input[type=submit] {
   margin-left: 2cm;
   font-family: 'Inter', sans-serif;
   font-size: 13px;
-  line-height: 21px;
+  line-height: 20.57px;
+  color: #515363;
 }
 
 #login-header{
-  font-size: 56px;
-  font-family: 'Inter', sans-serif;
-  line-height: 66px;
+  font-family: 'Poppins', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 48px;
   color: #071773;
 }
 
@@ -50,10 +51,11 @@ font-family: 'Inter', sans-serif;
 font-size: 17px;
 line-height: 21px;
 text-align-last: center;
+
 }
 
 p a{
-  color:black;
+  color:#515363;
 }
 
 #footnote{
@@ -69,4 +71,11 @@ p a{
 
 #copyright{
   margin-left: 3cm;
+}
+
+#noacc{
+  font-family: 'Inter', sans-serif;
+  font-size: 17px;
+  line-height: 21px;
+  color: #515363;
 }

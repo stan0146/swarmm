@@ -10,18 +10,20 @@ input[type=text], input[type=password] {
     display: inline-block;
     border: 1px solid lightgray;
     background:white;
+    
 
   }
   
  h2{
-     font-size: 56px;
-     font-family: 'Inter', sans-serif;
-     line-height: 66px;
-     color: #071773;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 48px;
+    color: #071773;
  }
 
  p a{
-    color: black
+    color: #515363;
  }
   
  
@@ -42,6 +44,8 @@ input[type=text], input[type=password] {
     text-align-last: center;
     
   }
+
+  
   
   .section1 {
     background-color: white;
@@ -57,10 +61,11 @@ input[type=text], input[type=password] {
 }
 
 .inputfield{
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 20.57px;
    margin-left: 2cm;
-   font-family: 'Inter', sans-serif;
-   font-size: 13px;
-   line-height: 21px;
+   color: #515363;
 
 
 }
@@ -77,3 +82,9 @@ input[type=text], input[type=password] {
   
   #copyright{
     margin-left: 3cm;
+  }
+  #log{
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 21px;
+  }

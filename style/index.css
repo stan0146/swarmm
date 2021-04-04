@@ -1,6 +1,5 @@
 body:not(nav) {
    background-color:white;
-   font-family: 'Inter', sans-serif;
 }
 
 .mdl-button {
@@ -87,11 +86,11 @@ body:not(nav) {
 
 #section3{
     font-family: 'Inter', sans-serif;
-    font-size: 64px;
+    font-size: 48px;
     line-height: normal;
     color: #071773;
     text-align: centre;
-    margin-left: 10cm ;
+    margin-left: 12cm ;
 }
 
 #position{
@@ -147,4 +146,9 @@ body:not(nav) {
     line-height: 21px;
     color: #071773;
     
+  }
+
+  #img-bee{
+     margin-left: 25cm;
+     margin-bottom: 20cm;
   }
