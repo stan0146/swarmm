@@ -10,6 +10,7 @@ const EVENT_INDEX = "eventindex";
 const EVENT_LIST = "eventlist";
 const PARTICIPANTS_KEY = "participants";
 const PARTICIPANTS_COUNT = "numofparticipants";
+const CLICK_EVENT_INDEX_KEY="clickeventindex";
 
 //ACCOUNTS CLASSES
 class Account
@@ -277,6 +278,17 @@ function updateLoginIndex(index)
     console.log("localStorage is not supported by current browser.");
   }
 }
+function updateClickEventIndex(index)
+{
+  if (typeof(Storage) !== "undefined")
+  {
+    localStorage.setItem(`${CLICK_EVENT_INDEX_KEY}`,JSON.stringify(index));
+  }
+  else
+  {
+    console.log("localStorage is not supported by current browser.");
+  }
+}
 
 function getIndex()
 {
@@ -309,6 +321,12 @@ function getLname()
 function getLoginIndex()
 {
   let data = JSON.parse(localStorage.getItem(`${LOGIN_INDEX_KEY}`));
+  return data;
+}
+
+function getClickEventIndex()
+{
+  let data = JSON.parse(localStorage.getItem(`${CLICK_EVENT_INDEX_KEY}`));
   return data;
 }
 

@@ -10,17 +10,26 @@ let eventdummy=[{
             endtime: "16",
             participants: "2" }
         ]   
+
+        let list=getAccountList();
+
+        accountList.fromData(list);
+
+
+
     
     
     index=0;
 
+    let loginIndex=getLoginIndex();
 
-    for (index=0;index<eventdummy.length;index++){
-    let eventname= eventdummy[index].eventname;
-    let date= eventdummy[index].date;
-    let starttime=eventdummy[index].starttime;
-    let endtime=eventdummy[index].endtime;
-    let participants=eventdummy[index].participants;
+
+    for (i=0;i<accountList._accountList[loginIndex]._eventsList.length;i++){
+    let eventname= accountList._accountList[loginIndex]._eventsList[i]._eventName;
+    let date= accountList._accountList[loginIndex]._eventsList[i]._date;
+    let starttime=accountList._accountList[loginIndex]._eventsList[i]._startTime;
+    //let endtime=accountList._accountList[loginIndex]._eventsList[i]._endTime;;
+    //let participants=accountList._accountList[loginIndex]._eventsList[i]._participants;
     
     
     let list=document.getElementById("view")
@@ -31,10 +40,10 @@ let eventdummy=[{
     font-style: normal;
     font-weight: 500;
     color: #071773;"> ${eventname} - ${date}  </h2>
-    <h4 style="margin-left: 2cm;background-color:#FBF8F1; border-radius: 1px ; font-family: 'Inter', sans-serif;font-size: 17px;line-height: 21px;color: #071773;">Start time: ${starttime}:00</h4>
-    <h4 style="margin-left: 2cm;background-color:#FBF8F1; border-radius: 1px ; font-family: 'Inter', sans-serif;font-size: 17px;line-height: 21px;color: #071773;">End time: ${endtime}:00</h4>
+    <h4 style="margin-left: 2cm;background-color:#FBF8F1; border-radius: 1px ; font-family: 'Inter', sans-serif;font-size: 17px;line-height: 21px;color: #071773;">Start time: ${starttime}</h4>
+    <h4 style="margin-left: 2cm;background-color:#FBF8F1; border-radius: 1px ; font-family: 'Inter', sans-serif;font-size: 17px;line-height: 21px;color: #071773;">End time: ${7}:00</h4>
     <a href="events.html">
-    <button style="  margin-left: 2cm;  background: #FDB433;
+    <button id="${i}" style="  margin-left: 2cm;  background: #FDB433;
     border-radius: 26px;
     height: 52px;
     width: 2.8cm;
@@ -51,8 +60,4 @@ let eventdummy=[{
 
     }
     
-    function view(){
-        let index= getLoginIndex(); //need to get index of event
-        console.log(index);
-
-    }
+ 

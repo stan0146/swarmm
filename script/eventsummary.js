@@ -7,20 +7,25 @@ let eventdummy=[{
         ]   
 
 
-index=0;
-let eventname= eventdummy[index].eventname;
-let date= eventdummy[index].date;
-let starttime=eventdummy[index].starttime;
-let endtime=eventdummy[index].endtime;
-let participants=eventdummy[index].participants;
+i=getClickEventIndex();
 
-let avatars=["images/BeeAvatar-Blue.png","images/BeeAvatar-Pink.png","images/BeeAvatar-Green.png","images/BeeAvatar-Yellow.png"]
+let loginIndex=getLoginIndex();
+let list=getAccountList();
+accountList.fromData(list);
+
+  let eventname= accountList._accountList[loginIndex]._eventsList[i]._eventName;
+  let date= accountList._accountList[loginIndex]._eventsList[i]._date;
+  let starttime=accountList._accountList[loginIndex]._eventsList[i]._startTime;
+  let endtime=21
+  //let endtime=accountList._accountList[loginIndex]._eventsList[i]._endTime;;
+  let participants=accountList._accountList[loginIndex]._eventsList[i]._participants;
+let avatars=["images/BeeAvatar-Yellow.png","images/BeeAvatar-Blue.png","images/BeeAvatar-Green.png","images/BeeAvatar-Pink.png"]
 let people=""
 for (i=0;i<participants.length;i++)
 {
   people+=`
   <tr>
-  <td class="image"> <img src="${avatars[i]}" style="width: 8%">  &nbsp  &nbsp ${participants[i]} </td>
+  <td class="image"> <img src="${avatars[i]}" style="width: 8%">  &nbsp  &nbsp ${"participant[i] name"} </td>
   </tr> `
 
 }
@@ -81,7 +86,7 @@ ${people}
 `;
 
 
-for (i=starttime;i<=endtime;i++){
+for (i=starttime[1];i<=endtime;i++){
       
   document.getElementById(`cell${i}`).setAttribute("class", "busy");
 }

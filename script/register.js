@@ -61,6 +61,7 @@ function click_signup() {
     }
     else {
       index = 0;
+      updateLoginIndex(index);
     }
   
   
