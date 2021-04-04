@@ -12,18 +12,18 @@ nav{
     font-family: 'Inter', sans-serif;
     font-size: 17px;
     line-height: 21px;
-    margin-left: 3cm;
 }
 .nav-bar{
     height: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 2rem;
+    padding: 0 9rem;
 }
 li{
     padding-right: 1em;
 }
+
 .nav-links{
     width:250px:
 }
@@ -48,18 +48,16 @@ li{
 }
 
 .getstarted{
+    background: #FDB433;
+    border-radius: 26px;
+    height: 52px;
+    width: 180px;
+    border-width: 0px;
+    font-family: 'Inter', sans-serif;
+    color:#071773;
+    font-size: 17px;
+    line-height: 21px;
 
-background: #FDB433;
-border-radius: 26px;
-height: 52px;
-width: 180px;
-left: 130px;
-right: 1577px;
-border-width: 0px;
-font-family: 'Inter', sans-serif;
-color:#071773;
-font-size: 17px;
-line-height: 21px;
 }
 
 .loginbtn {

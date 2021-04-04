@@ -1,0 +1,13 @@
+@font-face {
+    font-family: 'Circular Std Book';
+    src: url('https://swarmm.live/css/fonts/Circular-Std-Book.eot');
+    src: url('https://swarmm.live/css/fonts/Circular-Std-Book.eot?#iefix') format('embedded-opentype'),
+        url('https://swarmm.live/css/fonts/CircularStd-Book.woff2') format('woff2'),
+        url('https://swarmm.live/css/fonts/CircularStd-Book.woff') format('woff'),
+        url('https://swarmm.live/css/fonts/CircularStd-Book.ttf') format('truetype'),
+        url('https://swarmm.live/css/fonts/CircularStd-Book.svg#CircularStd-Book') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
