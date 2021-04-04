@@ -23,7 +23,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style/nav.css">
-  <link rel="stylesheet" href="style/index.css">
+  <link rel="stylesheet" href="style/createEvent.css">
   <title>Swarmm</title>
 </head>
 
@@ -94,7 +94,7 @@
       <!-- empty grid for formatting-->
       <div class="mdl-cell mdl-cell--1-col"></div>
       <div class="mdl-cell mdl-cell--4-col">
-        <h1>Create new event</h1>
+        <h1 id="event_header">Create new event</h1>
         <label for="eventname">Event Name:</label>
         <input type="text" id="eventname" name="eventname"><br><br>
       </div>
@@ -134,7 +134,7 @@
           <input class="mdl-textfield__input" type="time" id="endtime" style="float: right;">
           <label class="mdl-textfield__label" for="time"></label>
         </div><br>
-        <input type="submit" value="Create new event" onclick="createNewEvent()">
+        <button class="newEvent" onclick="createNewEvent()">Create new event</button>
       </div>
       <!-- right grid: choose unavailability, choose meeting hours-->
       <div class="mdl-cell mdl-cell--6-col">
