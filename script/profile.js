@@ -5,12 +5,16 @@ let dummy=[{
     fname: "john",
     lname:"last"}
     ]
-    let index= dummy[0].index;
-  
-    let email=dummy[index].email;
-    let password=dummy[index].password;
-    let fname=dummy[index].fname;
-    let lname=dummy[index].lname;
-  
+
+let accounts=getAccountList();
+    accountList.fromData(accounts);
+let index=getLoginIndex();
+
+   let email= accountList._accountList[index]._email;
+   let password= accountList._accountList[index]._password;
+   let fname= accountList._accountList[index]._fname;
+   let lname= accountList._accountList[index]._lname;
+
+    
 let details=document.getElementById("my-detail");
 details.innerHTML=`<h4>My Details</h4> <p>Name: ${fname + ' ' + lname} </p> <p>Email: ${email}</p>`

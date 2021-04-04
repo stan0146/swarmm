@@ -4,6 +4,7 @@
     font-size: 17px;
     line-height: 21px;
     text-transform: capitalize;
+    top: 2mm;
 }
 
 body:not(nav){
@@ -77,3 +78,33 @@ body:not(nav){
     text-align: center;
     margin-top: 5mm;
 }
+
+.useracc{
+    background: #FDB433;
+    border-radius: 26px;
+    height: 52px;
+    width: 180px;
+    left: 300px;
+    right: 1200px;
+    border-width: 0px;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 21px;
+    color: #071773;
+    
+  }
+
+  .summaryevents{
+    background: #FDB433;
+    border-radius: 26px;
+    height: 52px;
+    width: 180px;
+    left: 300px;
+    right: 1200px;
+    border-width: 0px;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 21px;
+    color: #071773;
+    
+  }

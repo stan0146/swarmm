@@ -43,6 +43,7 @@ class Account
         this._password=data._password
         this._fname=data._fname;
         this._lname=data._lname;
+        this._eventsList = data._eventsList;
     }
 }
 
@@ -153,7 +154,7 @@ class EventsList
 
 //GLOBAL VARS
 let accountList= new AccountList;
-let eventList = new EventsList();
+let eventList = new EventsList;
     
 //FUNCTIONS RELATED TO ACCOUNTS
 function updateAccountList(accountList)
@@ -274,7 +275,7 @@ function getLname()
   return data;
 }
 
-function getIndex()
+function getLoginIndex()
 {
   let data = JSON.parse(localStorage.getItem(`${LOGIN_INDEX_KEY}`));
   return data;
@@ -292,6 +293,17 @@ function updateEventIndex(index)
   if (typeof(Storage) !== "undefined")
   {
     localStorage.setItem(`${EVENT_INDEX}`,JSON.stringify(index));
+  }
+  else
+  {
+    console.log("localStorage is not supported by current browser.");
+  }
+}
+function updateEventsList(eventsList)
+{
+    if (typeof(Storage) !== "undefined")
+  {
+    localStorage.setItem(`${EVENT_LIST}`,JSON.stringify(eventsList));
   }
   else
   {
