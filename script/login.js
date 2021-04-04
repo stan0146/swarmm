@@ -1,30 +1,44 @@
 
 const loginForm = document.getElementById("login-form");
-const loginButton = document.getElementById("login-form-submit");
 const loginErrorMsg = document.getElementById("login-error-msg");
 
-loginButton.addEventListener("click", (e) => 
-{
-    e.preventDefault();
-    const username = loginForm.username.value;
-    const password = loginForm.password.value;
+function login_to(){
+
+    let email = loginForm.email.value;
+    let password = loginForm.password.value;
+    let errormsg=document.getElementById("error_msg");
+
 
     data=getAccountList();
     accountList.fromData(data);
 
+    let success=false;
+
     for (i=0;i<accountList._accountList.length;i++)
     {
-
-        if (username === accountList._accountList[i]._email && password === accountList._accountList[i]._password) 
+        
+        if (email === accountList._accountList[i]._email && password === accountList._accountList[i]._password) 
         {
-            alert("You have successfully logged in.");
-            window.location.href = "profile.html"
+            success=true; 
         } 
+
         else 
         {
-            loginErrorMsg.style.opacity = 1;
+            success=false;
+   
         }
     }
+
+    if (success==true){
+        alert('Log in successful')
+
+        window.location.href = "profile.html";
+    }
+
+    else{
+        alert('Incorrect/invalid email or password. Please try again.');
+    }
 }
-)
+
+
 

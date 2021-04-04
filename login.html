@@ -19,17 +19,20 @@
 <body>
   <nav>
     <div class="nav-bar">
-      <a href="index.html"><h1 class="nav-header"><b>swarm</b></h1></a>
+      <a href="index.html">
+        <h1 class="nav-header"><b>swarm</b></h1>
+      </a>
       <div class="nav-links">
         <ul>
-          <li ><a href="login.html">
-            <button class="loginbtn">Log in</button>
-          </a></li>
+          <li><a href="login.html">
+              <button class="loginbtn">Log in</button>
+            </a></li>
           <br>
           <li>
             <a href="createAccount.html">
               <button class="getstarted">Get started</button>
-            </a></li>
+            </a>
+          </li>
           </li>
         </ul>
       </div>
@@ -37,25 +40,50 @@
     </div>
   </nav>
 
-<div>
-  <h1 id="login-header">Login</h1>
-        
-  <div id="login-error-msg-holder">
-    <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
-  </div>
-  
-  <form id="login-form">
-    <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
-    <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
-    <input type="submit" value="Login" id="login-form-submit">
-  </form>
-</div>
+  <br><br><br><br><br><br>
+  <div class="section1">
+    <br>
+    <div class="login_form">
+      <h1 id="login-header">Login</h1>
 
-      
-      
+      <p>Don't have an account? <a href="createAccount.html">Sign up</a></p>
+
+
+      <form id="login-form">
+        <p id="error_msg"></p>
+        <label for="email">Email</label>
+        <br>
+        <input type="text" name="email" id="email-field" class="login-form-field">
+        <br>
+        <label for="password">Password</label>
+        <br>
+        <input type="password" name="password" id="password-field" class="login-form-field">
+      </form>
+      <br>
+      <button id="login_btn" onclick="login_to()">Login</button>
+      <br><br>
+
+      <br><br><br><br><br><br><br><br><br><br><br>
+    </div>
   </div>
-  <script src="script/shared.js"></script>
-  <script src="script/login.js"></script> </script>
+<br><br>
+
+
+
+    <div id="footnote">
+      <br>
+      <p id="copyright"> © 2021 Swarm. All rights reserved.</p>
+
+    </div>
+
+
+
+
+
+
+    <script src="script/shared.js"></script>
+    <script src="script/login.js"></script>
+    </script>
 
 </body>
 

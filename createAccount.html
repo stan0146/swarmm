@@ -12,6 +12,7 @@
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
 
   <link rel="stylesheet" href="style/nav.css">
+  <link rel="stylesheet" href="style/signup.css">
   <title>Swarmm</title>
 </head>
 
@@ -38,36 +39,56 @@
 
     </div>
   </nav>
-    <section>
+  <br><br><br><br><br><br>
+    <div class="section1">
 
-       <br><br><br><br>
 
 
-          <h1>Sign Up</h1>
-          <p>Please fill in this form to create an account.</p>
+      <div class="inputfield">
+      <br>
+          <h2>Sign up</h2>
+          <p>Already have an account? <a href="login.html">Log in</a></p>
           
+          <label for="fname">First name</label>
+          <br>
+          <input type="text" id="fname" onchange="fname()" required >
+
+          <br>
+
+          <label for="lname">Last name</label>
+          <br>
+          <input type="text" id="lname" onchange="lname()" required >
+
+        <br>
           <label for="email">Email</label>
-          <input type="text" placeholder="Enter Email" id="email" onchange="email()" required >
-      
+          <br>
+          <input type="text" id="email" onchange="email()" required >
+
+          <br>
           <label for="psw"><b>Password</b></label>
-          <input type="password" placeholder="Enter Password" id="psw" onchange="password()" required>
-      
+          <br>
+          <input type="password" id="psw" onchange="password()" required>
+      <br>
           <label for="psw-repeat"><b>Repeat Password</b></label>
-          <input type="password" placeholder="Repeat Password" id="repeatpwd" onchange="repeatpwd()" required>
-      
-          <div class="clearfix">
-            <button type="button" id="cancelbtn">Cancel</button>
-
+          <br>
+          <input type="password" id="repeatpwd" onchange="repeatpwd()" required>
+      <br><br>
+          <div class="submit">
               <button type="submit" id="signupbtn" onclick="click_signup()">Sign Up</button>
-          
           </div>
-      <script>
-        let cancelRef= document.getElementById("cancelbtn");
-        cancelRef.addEventListener("click",function(){ window.location="index.html"});
-        </script>
 
-</section>
-  
+          <br><br>
+
+        </div>
+ 
+
+      </div>
+
+      <div id="footnote">
+        <br>
+        <p id="copyright"> © 2021 Swarm. All rights reserved.</p>
+        <br>
+      </div>
   <script type="text/javascript" src="script/shared.js"></script>
   <script type="text/javascript" src="script/register.js"></script>
 

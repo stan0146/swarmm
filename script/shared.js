@@ -2,23 +2,31 @@ const ACCOUNT_DATA_KEY="accountData";
 const EMAIL_KEY=  "email";
 const PASSWORD_KEY="password";
 const INDEX_KEY="index";
-const ACCOUNT_LIST_KEY="accountList"
+const ACCOUNT_LIST_KEY="accountList";
+const FNAME_KEY="fname";
+const LNAME_KEY="lname";
 
 class Account
 {
-    constructor(index, email, password){
+    constructor(index, email, password,fname,lname){
         this._index=index;
         this._email=email;
         this._password=password;
+        this._fname=fname;
+        this._lname=lname;
     }
     getIndex() {return this._index}
     getEmail(){return this._email;}
     getPassword(){return this._password}
+    getFname() {return this._fname}
+    getLname(){return this._lname;}
 
     fromData(data){
         this._index=data._index
         this._email=data._email
         this._password=data._password
+        this._fname=data._fname;
+        this._lname=data._lname;
     }
 }
 
@@ -33,9 +41,9 @@ class AccountList
     getAccount(index){return this._accountList[index];}
     getlength() {return this._accountList.length}
     
-    addAccount(index, email,password)
+    addAccount(index, email,password,fname,lname)
     {
-        let account= new Account(index,email,password);
+        let account= new Account(index,email,password,fname,lname);
         this._accountList.push(account);
     }
     
@@ -117,6 +125,30 @@ function updatePassword(password)
   }
 }
 
+function updateFname(fname)
+{
+  if (typeof(Storage) !== "undefined")
+  {
+    localStorage.setItem(`${FNAME_KEY}`,JSON.stringify(fname));
+  }
+  else
+  {
+    console.log("localStorage is not supported by current browser.");
+  }
+}
+
+function updateLname(lname)
+{
+  if (typeof(Storage) !== "undefined")
+  {
+    localStorage.setItem(`${LNAME_KEY}`,JSON.stringify(lname));
+  }
+  else
+  {
+    console.log("localStorage is not supported by current browser.");
+  }
+}
+
 function getIndex()
 {
   let data = JSON.parse(localStorage.getItem(`${INDEX_KEY}`));
@@ -130,6 +162,18 @@ function getEmail()
 function getPassword()
 {
   let data = JSON.parse(localStorage.getItem(`${PASSWORD_KEY}`));
+  return data;
+}
+
+function getFname()
+{
+  let data = JSON.parse(localStorage.getItem(`${FNAME_KEY}`));
+  return data;
+}
+
+function getLname()
+{
+  let data = JSON.parse(localStorage.getItem(`${LNAME_KEY}`));
   return data;
 }
 

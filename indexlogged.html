@@ -19,21 +19,50 @@
 <body>
   <nav>
     <div class="nav-bar">
-      <a href="index.html">
+      <a href="indexlogged.html">
         <h1 class="nav-header"><b>swarm</b></h1>
       </a>
       <div class="nav-links">
         <ul>
-          <li><a href="login.html">
-              <button class="loginbtn">Log in</button>
-            </a></li>
-          <br>
-          <li>
-            <a href="createAccount.html">
-              <button class="getstarted">Get started</button>
+        <li>
+            <a href="profile.html">
+              <button class="useracc">account</button>
             </a>
           </li>
-          </li>
+          <li>
+          <div class="logout">
+            <button id="show-dialog" type="button" class="mdl-button">Log out</button>
+            <dialog class="mdl-dialog">
+              <h4 class="mdl-dialog__title">Are you sure?</h4>
+              <div class="mdl-dialog__content">
+                <p>
+                  Beecause we'll miss you
+                </p>
+              </div>
+              <div class="mdl-dialog__actions">
+                <a href="index.html">
+                  <button type="button" class="mdl-button">Log out</button>
+                </a>
+                
+                <button type="button" class="mdl-button close">Cancel</button>
+              </div>
+            </dialog>
+            <script>
+              var dialog = document.querySelector('dialog');
+              var showDialogButton = document.querySelector('#show-dialog');
+              if (! dialog.showModal) {
+                dialogPolyfill.registerDialog(dialog);
+              }
+              showDialogButton.addEventListener('click', function() {
+                dialog.showModal();
+              });
+              dialog.querySelector('.close').addEventListener('click', function() {
+                dialog.close();
+              });
+            </script>
+          </div>
+        </li>
+
         </ul>
       </div>
 
@@ -43,9 +72,9 @@
 
   <div class="page-content">
 
+ 
 
-
-    <div class="section1">
+      <div class="section1">
 
       <div class="mdl-cell mdl-cell--10-col">
         <br><br><br><br>
@@ -57,25 +86,25 @@
       <div class="mdl-cell mdl-cell--10-col">
 
         <p class="body2">The most simple and intuitive planner to schedule <br>meetups when everyone is availble.</p>
-
-        <div id="position"> <button type="button" class="signup">
-            <a class="signup" href="createAccount.html">Sign up for free</a>
-          </button></div>
-
+        
+        <div id="position">  <button type="button" class="signup">
+          <a class="signup" href="createAccount.html">Sign up for free</a>
+        </button></div>
+      
       </div>
       <br><br>
 
     </div>
 
-    <div class="mdl-cell mdl-cell--12-col">
-      <br><br>
-      <p id=mini>Your WFH productivity is about to reach a whole new level</p>
+      <div class="mdl-cell mdl-cell--12-col">
+        <br><br>
+        <p id=mini>Your WFH productivity is about to reach a whole new level</p>
+      </div>
+
+
     </div>
 
-
-  </div>
-
-  <br><br><br>
+    <br><br><br>
 
   </div>
 
@@ -89,14 +118,8 @@
   <br><br><br>
   <section class="section1">
     <br><br><br><br><br>
-    <p id="section3"> Meetings have never <br> &nbsp &nbsp &nbsp been easier.</p>
-    <br>
-    <div id=""> <button type="button" class="signup" style="margin-left: 15cm;">
-        <a class="signup" href="createAccount.html">Sign up now</a>
-      </button></div>
-      <br><br><br><br><br>
-
-    </div>
+    <p id="section3"> Meetings have never <br> been easier.</p>
+    <br><br><br><br><br><br>
   </section>
 
   <div id="footnote">
@@ -105,6 +128,10 @@
     <br>
 
   </div>
+
+
+
+
 
 
   <script src="script/shared.js"></script>

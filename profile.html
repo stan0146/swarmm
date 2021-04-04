@@ -5,55 +5,158 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.amber-orange.min.css" />
   <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <link rel="stylesheet" href="style/try.css">
+
+  <link rel="stylesheet" href="style/nav.css">
+  <link rel="stylesheet" href="style/profile.css">
   <title>Swarmm</title>
 </head>
 
 <body>
-  <!-- Always shows a header, even in smaller screens. (FIXED HEADER) -->
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-        <!-- Title -->
-        <span class="mdl-layout-title">
-          <a class="mdl-navigation__link" href="index.html">
-            <h3>Swarmm</h3>
-          </a>
-        </span>
-        <!-- Add spacer, to align navigation to the right -->
-        <div class="mdl-layout-spacer"></div>
-        <!-- Navigation. We hide it in small screens. -->
-        <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="profile.html">Profile</a>
-          <a class="mdl-navigation__link" href="allEvents.html">All events</a>
-          <a class="mdl-navigation__link" href="createEvent.html">Create new event</a>
-          <a class="mdl-navigation__link" href="login.html">Log in</a>
-          <a class="mdl-navigation__link" href="createAccount.html">Register</a>
-        </nav>
+  <nav>
+    <div class="nav-bar">
+      <a href="indexlogged.html">
+        <h1 class="nav-header"><b>swarm</b></h1>
+      </a>
+      <div class="nav-links">
+        <ul>
+          <li>
+            <a href="profile.html">
+              <button class="useracc">account</button>
+            </a>
+          </li>
+
+          <li>
+            <div class="logout">
+              <button id="show-dialog" type="button" class="mdl-button">Log out</button>
+              <dialog class="mdl-dialog">
+                <h4 class="mdl-dialog__title">Are you sure?</h4>
+                <div class="mdl-dialog__content">
+                  <p>
+                    Beecause we'll miss you
+                  </p>
+                </div>
+                <div class="mdl-dialog__actions">
+                  <a href="index.html">
+                    <button type="button" class="mdl-button">Log out</button>
+                  </a>
+                  
+                  <button type="button" class="mdl-button close">Cancel</button>
+                </div>
+              </dialog>
+              <script>
+                var dialog = document.querySelector('dialog');
+                var showDialogButton = document.querySelector('#show-dialog');
+                if (! dialog.showModal) {
+                  dialogPolyfill.registerDialog(dialog);
+                }
+                showDialogButton.addEventListener('click', function() {
+                  dialog.showModal();
+                });
+                dialog.querySelector('.close').addEventListener('click', function() {
+                  dialog.close();
+                });
+              </script>
+            </div>
+          </li>
+
+        </ul>
       </div>
-    </header>
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">Swarmm</span>
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="profile.html">Profile</a>
-        <a class="mdl-navigation__link" href="allEvents.html">All events</a>
-        <a class="mdl-navigation__link" href="createEvent.html">Create new event</a>
-        <a class="mdl-navigation__link" href="login.html">Log in</a>
-        <a class="mdl-navigation__link" href="createAccount.html">Register</a>
-        
-      </nav>
+
     </div>
-    <main class="mdl-layout__content">
-      <h3>profile</h3>
-      <img src="images/bee.png" style="
-      width: 15%;" >
-    </main>
+  </nav>
+<br><br><br><br><br><br>
+
+<h4 id="hello">Hello User!</h4>
+  
+<div class="section1">
+    <br>
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--3-col">
+        <h3 id="event_header">All events</h3>
+      </div>
+      
+      <div class="mdl-cell mdl-cell--1-col">
+        <a href="createEvent.html">
+        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" style="width: 40px; height: 40px; min-width: initial; margin-top: 5mm; margin-right:1cm">
+          <i class="material-icons">add</i>
+        </button>
+      </a>
+      </div>
+    </div>
+
+
+  
+    
+
+    <div class="section2">
+      <br>
+      <div class="event_sum">
+      <h6>Event 1 - Tue 22 Jan </h6>
+
+      <div class="section3">
+
+        <p id="besttime"> <span style="font-size: 17px; "> The best time to meet is at :  </span> 12:00pm </p>
+  
+  
+      </div>
+
+      <!-- BEE PARTICIPANTS-->
+      <style>
+        .demo-list-icon {
+          width: 300px;
+        }
+        </style>
+        
+        <ul class="demo-list-icon mdl-list">
+          <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-icon">person</i>
+            Bryan Cranston
+        </span>
+          </li>
+          <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-icon">person</i>
+            Aaron Paul
+          </span>
+          </li>
+          <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+            <i class="material-icons mdl-list__item-icon">person</i>
+            Bob Odenkirk
+          </span>
+          </li>
+        </ul>
+    </div>
+
+
   </div>
 
-  <script src="script/shared.js"></script>
+    <!--RETIREIVE DATA AND DISPLAY IT HERE.-->
+  </div>
+
+
+
+
+    <div id="footnote">
+      <br>
+      <p id="copyright"> © 2021 Swarm. All rights reserved.</p>
+
+    </div>
+
+
+
+
+
+
+    <script src="script/shared.js"></script>
+    <script src="script/profile.js"></script>
+    </script>
 
 </body>
 

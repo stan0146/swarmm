@@ -1,7 +1,3 @@
-body:not(nav){
-    background-color:#F4F7FF;
-   font-family: 'Inter', sans-serif;
-}
 
 nav{
     color: white;
@@ -61,13 +57,13 @@ left: 130px;
 right: 1577px;
 border-width: 0px;
 font-family: 'Inter', sans-serif;
-
+color:#071773;
 font-size: 17px;
 line-height: 21px;
 }
 
 .loginbtn {
-    background:#e5e5e5;
+    background:white;
 border-radius: 26px;
 height: 52px;
 width: 100px;
@@ -75,8 +71,9 @@ left: 130px;
 right: 1577px;
 border-width: 0px;
 font-family: 'Inter', sans-serif;
-
+color:#071773;
 font-size: 17px;
 line-height: 21px;
 }
+
 

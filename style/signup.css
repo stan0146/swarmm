@@ -1,0 +1,79 @@
+body:not(nav){
+    background: #F4F7FF;;
+   font-family: 'Inter', sans-serif;
+}
+
+input[type=text], input[type=password] {
+    width: 40%;
+    padding: 15px;
+    height: 10px;
+    display: inline-block;
+    border: 1px solid lightgray;
+    background:white;
+
+  }
+  
+ h2{
+     font-size: 56px;
+     font-family: 'Inter', sans-serif;
+     line-height: 66px;
+     color: #071773;
+ }
+
+ p a{
+    color: black
+ }
+  
+ 
+ 
+  
+
+#signupbtn {
+    background: #FDB433;
+    border-radius: 26px;
+    height: 45px;
+    width: 400px;
+    left: 300px;
+    right: 1200px;
+    border-width: 0px;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 21px;
+    text-align-last: center;
+    
+  }
+  
+  .section1 {
+    background-color: white;
+    background-position: right bottom, left top, right top, left bottom;
+    margin-left: 6cm;
+    margin-right: 6cm;
+    border-radius: 5mm;
+    text-align-last: left;
+    
+
+
+
+}
+
+.inputfield{
+   margin-left: 2cm;
+   font-family: 'Inter', sans-serif;
+   font-size: 13px;
+   line-height: 21px;
+
+
+}
+
+#footnote{
+    background-color: white;
+    color:#071773;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 21px;
+    margin-top: 5mm;
+    height: 2.1cm
+  }
+  
+  #copyright{
+    margin-left: 3cm;

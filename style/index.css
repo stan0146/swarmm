@@ -1,3 +1,9 @@
+body:not(nav){
+    background-color:white;
+   font-family: 'Inter', sans-serif;
+}
+
+
 .heading1 {
     font-family: 'Inter', sans-serif;
     font-size: 64px;
@@ -57,11 +63,37 @@
     background-position: right bottom, left top;
 }
 
-#footnote{
+#section3{
+    font-family: 'Inter', sans-serif;
+    font-size: 64px;
+    line-height: normal;
+    color: #071773;
     text-align: centre;
-    margin-left: 15cm;
+    margin-left: 10cm ;
 }
 
 #position{
     margin-left: 3cm;
 }
+
+#footnote{
+    background-color: white;
+    color:#071773;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 21px;
+    margin-top: 5mm;
+    height: 2.1cm
+  }
+  
+  #copyright{
+    margin-left: 3cm;
+  }
+
+  .mdl-button{
+    color:#071773;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 21px;
+}
+
