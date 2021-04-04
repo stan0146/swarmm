@@ -7,17 +7,22 @@ let eventdummy=[{
         ]   
 
 
-i=getClickEventIndex();
+
 
 let loginIndex=getLoginIndex();
 let list=getAccountList();
 accountList.fromData(list);
+i="";
+if (accountList._accountList[loginIndex]._eventsList.length==1){
+  i=0;
+}
+else{i=getClickEventIndex();}
+
 
   let eventname= accountList._accountList[loginIndex]._eventsList[i]._eventName;
   let date= accountList._accountList[loginIndex]._eventsList[i]._date;
   let starttime=accountList._accountList[loginIndex]._eventsList[i]._startTime;
-  let endtime=21
-  //let endtime=accountList._accountList[loginIndex]._eventsList[i]._endTime;;
+  let endtime=accountList._accountList[loginIndex]._eventsList[i]._endTime;
   //let participants=accountList._accountList[loginIndex]._eventsList[i]._participants;
 let participants=1;
 let avatars=["images/BeeAvatar-Yellow.png","images/BeeAvatar-Blue.png","images/BeeAvatar-Green.png","images/BeeAvatar-Pink.png"]
