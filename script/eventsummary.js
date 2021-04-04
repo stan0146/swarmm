@@ -26,7 +26,7 @@ for (i=0;i<participants.length;i++)
 {
   people+=`
   <tr>
-  <td class="image"> <img src="${avatars[i]}" style="width: 8%">  &nbsp  &nbsp ${participants[i]._name} </td>
+  <td class="image"> <img src="${avatars[i]}" style="width: 8%">  &nbsp  &nbsp ${participants[i]._name} &nbsp  &nbsp Email: ${participants[i]._email}</td>
   </tr> `
 
 }
