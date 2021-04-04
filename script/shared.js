@@ -8,6 +8,8 @@ const LNAME_KEY="lname";
 const LOGIN_INDEX_KEY="loginIndex";
 const EVENT_INDEX = "eventindex";
 const EVENT_LIST = "eventlist";
+const PARTICIPANTS_KEY = "participants";
+const PARTICIPANTS_COUNT = "numofparticipants";
 
 //ACCOUNTS CLASSES
 class Account
@@ -87,32 +89,32 @@ class AccountList
 //EVENTS CLASSES
 class Event
 {
-    constructor(eventName, date, unavailability, startTime, endTime){
+    constructor(eventName, date, unavailability, startTime, participants){
         this._eventName = eventName;
         this._date = date;
         this._unavailability = unavailability;
         this._startTime = startTime;
-        this._endTime = endTime
+        this._participants = participants;
     }
     getEventName() {return this._eventName;}
     getDate() {return this._date;}
     getUnavailability() {return this._unavailability;}
     getStartTime() {return this._startTime;}
-    getEndTime() {return this._endTime;}
+    getparticipants() {return this._participants;}
 
     //mutators
     set eventName(newName){this._eventName = newName;}
     set date(newdate){this._date = newdate;}
     set unavailability(newunav){this._unavailability = newunav;}
     set startTime(newTime){this._startTime = newTime;}
-    set endTime(newTime){this._endTime = newTime;}
+    set participants(newparticipants){this._participants = newparticipants;}
 
     fromData(data){
         this._eventName = data._eventName;
         this._date = data._date;
         this._unavailability = data._unavailability;
         this._startTime = data._startTime;
-        this._endTime = data._endTime
+        this._participants = data._participants;
     }
 
 }
@@ -126,9 +128,9 @@ class EventsList
     getEventsList(){return this._eventsList;}
     getEvent(index){return this._eventsList[index];}
 
-    addEvent(eventName, date, unavailability, startTime, endTime)
+    addEvent(eventName, date, unavailability, startTime, participants)
     {
-        let event = new Event(eventName, date, unavailability, startTime, endTime);
+        let event = new Event(eventName, date, unavailability, startTime, participants);
         this._eventsList.push(event);
     }
     
