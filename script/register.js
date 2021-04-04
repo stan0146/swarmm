@@ -57,6 +57,7 @@ function click_signup() {
   
     if (accountList._accountList.length > 0) {
       index = accountList._accountList[accountList._accountList.length - 1]._index + 1;
+      updateLoginIndex(index);
     }
     else {
       index = 0;

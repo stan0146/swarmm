@@ -15,10 +15,9 @@ body:not(nav){
 .section1 {
     background-color: white;
     background-position: right bottom, left top, right top, left bottom;
-    margin-left: 4cm;
-    margin-right: 4cm;
+    margin-left: 2cm;
+    margin-right: 2cm;
     border-radius: 5mm;
-    height: 15cm;
     text-align-last: left;
     
 }
@@ -29,7 +28,6 @@ body:not(nav){
     margin-left: 1cm;
     margin-right: 1cm;
     border-radius: 10mm;
-    height: 10cm;
     text-align-last: left;
     
 }
@@ -108,3 +106,27 @@ body:not(nav){
     color: #071773;
     
   }
+
+.busy{
+    background-color:#FDB433;
+}
+
+
+/* table */
+
+table{
+    margin-right: 2cm;
+    width:30cm;
+}
+
+td{
+    background-color: white;
+    border-radius: 1mm;
+    width: 4cm;
+    text-align: center;
+  
+}
+
+.image{
+    width: 0.00001mm;
+}

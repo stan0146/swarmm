@@ -25,147 +25,170 @@
       </a>
       <div class="nav-links">
         <ul>
-            <li>
-                <div class="logout">
-                  <button id="show-dialog" type="button" class="mdl-button">Log out</button>
-                  <dialog class="mdl-dialog">
-                    <h4 class="mdl-dialog__title">Are you sure?</h4>
-                    <div class="mdl-dialog__content">
-                      <p>
-                        Beecause we'll miss you
-                      </p>
-                    </div>
-                    <div class="mdl-dialog__actions">
-                      <a href="index.html">
-                        <button type="button" class="mdl-button">Log out</button>
-                      </a>
-                      
-                      <button type="button" class="mdl-button close">Cancel</button>
-                    </div>
-                  </dialog>
-                  <script>
-                    var dialog = document.querySelector('dialog');
-                    var showDialogButton = document.querySelector('#show-dialog');
-                    if (! dialog.showModal) {
-                      dialogPolyfill.registerDialog(dialog);
-                    }
-                    showDialogButton.addEventListener('click', function() {
-                      dialog.showModal();
-                    });
-                    dialog.querySelector('.close').addEventListener('click', function() {
-                      dialog.close();
-                    });
-                  </script>
+          <li>
+            <div class="logout">
+              <button id="show-dialog" type="button" class="mdl-button">Log out</button>
+              <dialog class="mdl-dialog">
+                <h4 class="mdl-dialog__title">Are you sure?</h4>
+                <div class="mdl-dialog__content">
+                  <p>
+                    Beecause we'll miss you
+                  </p>
                 </div>
-              </li>
-            <li>
-                <a href="profile.html">
-                  <button class="useracc">My profile</button>
-                </a>
-              </li>
-    
-              <li>
-                <a href="events.html">
-                  <button class="summaryevents">My events</button>
-                </a>
-              </li>
+                <div class="mdl-dialog__actions">
+                  <a href="index.html">
+                    <button type="button" class="mdl-button">Log out</button>
+                  </a>
 
-          
+                  <button type="button" class="mdl-button close">Cancel</button>
+                </div>
+              </dialog>
+              <script>
+                var dialog = document.querySelector('dialog');
+                var showDialogButton = document.querySelector('#show-dialog');
+                if (!dialog.showModal) {
+                  dialogPolyfill.registerDialog(dialog);
+                }
+                showDialogButton.addEventListener('click', function () {
+                  dialog.showModal();
+                });
+                dialog.querySelector('.close').addEventListener('click', function () {
+                  dialog.close();
+                });
+              </script>
+            </div>
+          </li>
+          <li>
+            <a href="profile.html">
+              <button class="useracc">My profile</button>
+            </a>
+          </li>
+
+          <li>
+            <a href="events.html">
+              <button class="summaryevents">My events</button>
+            </a>
+          </li>
+
+
 
         </ul>
       </div>
 
     </div>
   </nav>
-<br><br><br><br><br><br>
+  <br><br><br><br><br><br>
 
-<h4 id="hello">Hello User!</h4>
-  
-<div class="section1">
+  <h4 id="hello">Hello User!</h4>
+
+  <div class="section1">
     <br>
     <div class="mdl-grid">
       <div class="mdl-cell mdl-cell--3-col">
         <h3 id="event_header">All events</h3>
       </div>
-      
+
       <div class="mdl-cell mdl-cell--1-col">
         <a href="createEvent.html">
-        <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored" style="width: 40px; height: 40px; min-width: initial; margin-top: 5mm; margin-right:1cm">
-          <i class="material-icons">add</i>
-        </button>
-      </a>
+          <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored"
+            style="width: 40px; height: 40px; min-width: initial; margin-top: 5mm; margin-right:1cm">
+            <i class="material-icons">add</i>
+          </button>
+        </a>
       </div>
+      
     </div>
 
 
-  
-    
+
+
 
     <div class="section2">
       <br>
       <div class="event_sum">
-      <h6>Event 1 - Tue 22 Jan </h6>
+        <h6>Event 1 - Tue 22 Jan </h6>
 
-      <div class="section3">
+        <div class="section3">
 
-        <p id="besttime"> <span style="font-size: 17px; "> The best time to meet is at :  </span> 12:00pm </p>
-  
-  
-      </div>
+          <p id="besttime"> </p>
 
-      <!-- BEE PARTICIPANTS-->
-      <style>
-        .demo-list-icon {
-          width: 300px;
-        }
-        </style>
+
+        </div>
+
+        <table class="fixed_date">
+          <tr style="height: 2cm; width: 2cm;">
+            <td id="cell0" style="width: 10px;"  >12:00 am </td>
+            <td  id="cell1" >1:00 am</td>
+            <td   id="cell2" >2:00 am</td>
+            <td   id="cell3" >3:00 am</td>
+            <td   id="cell4" >4:00 am</td>
+            <td   id="cell5" >5:00 am</td>
+            <td   id="cell6">6:00 am</td>
+            <td   id="cell7">7:00 am</td>
+            <td   id="cell8">8:00 am</td>
+            <td   id="cell9" >9:00 am</td>
+            <td   id="cell10">10:00 am</td>
+            <td   id="cell11">11:00 am</td>
+            <td   id="cell12">12:00 am</td>
+            <td   id="cell13">1:00 pm</td>
+            <td   id="cell14">2:00 pm</td>
+            <td   id="cell15">3:00 pm</td>
+            <td   id="cell16">4:00 pm</td>
+            <td   id="cell17">5:00 pm</td>
+            <td   id="cell18">6:00 pm</td>
+            <td   id="cell19">7:00 pm</td>
+            <td   id="cell20">8:00 pm</td>
+            <td   id="cell21">9:00 pm</td>
+            <td   id="cell22">10:00 pm</td>
+            <td   id="cell23">11:00 pm</td>
+          </tr>
+        </table>
+<h4>participants</h4>
+        <table>
+          <tr>
+            <td class="image"> <img src="images/bee.png" style="width: 20%"> participant 1  </td>
+            <td></td>
+          </tr>
+
+          <tr>
+            <td class="image">image</td>
+          </tr>
+        </table>
         
-        <ul class="demo-list-icon mdl-list">
-          <li class="mdl-list__item">
-            <span class="mdl-list__item-primary-content">
-            <i class="material-icons mdl-list__item-icon">person</i>
-            Bryan Cranston
-        </span>
-          </li>
-          <li class="mdl-list__item">
-            <span class="mdl-list__item-primary-content">
-            <i class="material-icons mdl-list__item-icon">person</i>
-            Aaron Paul
-          </span>
-          </li>
-          <li class="mdl-list__item">
-            <span class="mdl-list__item-primary-content">
-            <i class="material-icons mdl-list__item-icon">person</i>
-            Bob Odenkirk
-          </span>
-          </li>
-        </ul>
+
+      </div>
+      <!--add beige space-->
+      <br>
+
     </div>
+<!--add white space-->
 
-
-  </div>
 
     <!--RETIREIVE DATA AND DISPLAY IT HERE.-->
+
+    
   </div>
 
 
 
 
-    <div id="footnote">
-      <br>
-      <p id="copyright"> © 2021 Swarm. All rights reserved.</p>
+  <div id="footnote">
+    <br>
+    <p id="copyright"> © 2021 Swarm. All rights reserved.</p>
 
-    </div>
-
-
+  </div>
 
 
 
 
-    <script src="script/shared.js"></script>
-    <script src="script/events.js"></script>
-    </script>
 
+
+  <script src="script/shared.js"></script>
+  <script src="script/eventsummary.js"></script>
+  </script>
+  </div>
+
+  </div>
 </body>
 
 </html>
