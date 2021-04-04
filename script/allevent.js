@@ -28,8 +28,7 @@ let eventdummy=[{
     let eventname= accountList._accountList[loginIndex]._eventsList[i]._eventName;
     let date= accountList._accountList[loginIndex]._eventsList[i]._date;
     let starttime=accountList._accountList[loginIndex]._eventsList[i]._startTime;
-    //let endtime=accountList._accountList[loginIndex]._eventsList[i]._endTime;;
-    //let participants=accountList._accountList[loginIndex]._eventsList[i]._participants;
+    let endtime=accountList._accountList[loginIndex]._eventsList[i]._endTime;;
     
     
     let list=document.getElementById("view")
@@ -41,7 +40,7 @@ let eventdummy=[{
     font-weight: 500;
     color: #071773;"> ${eventname} - ${date}  </h2>
     <h4 style="margin-left: 2cm;background-color:#FBF8F1; border-radius: 1px ; font-family: 'Inter', sans-serif;font-size: 17px;line-height: 21px;color: #071773;">Start time: ${starttime}</h4>
-    <h4 style="margin-left: 2cm;background-color:#FBF8F1; border-radius: 1px ; font-family: 'Inter', sans-serif;font-size: 17px;line-height: 21px;color: #071773;">End time: ${7}:00</h4>
+    <h4 style="margin-left: 2cm;background-color:#FBF8F1; border-radius: 1px ; font-family: 'Inter', sans-serif;font-size: 17px;line-height: 21px;color: #071773;">End time: ${endtime}</h4>
     <a href="events.html">
     <button id="${i}" style="  margin-left: 2cm;  background: #FDB433;
     border-radius: 26px;

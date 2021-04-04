@@ -29,7 +29,7 @@ function createNewEvent() {
         window.localStorage.removeItem(PARTICIPANTS_KEY);
         window.localStorage.removeItem(PARTICIPANTS_COUNT);
         //change window to all event (?) page when done
-        window.location.href = "allevent.html";
+        window.location.href = "allEvents.html";
     }
 
 }

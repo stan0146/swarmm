@@ -1,17 +1,10 @@
-let eventdummy=[{
-        eventname: "Meeting",
-        date: "12/04/2021",
-        starttime: "1",
-        endtime: "4",
-        participants: ["cindy","bob","glen"]}
-        ]   
-
 
 
 
 let loginIndex=getLoginIndex();
 let list=getAccountList();
 accountList.fromData(list);
+
 i="";
 if (accountList._accountList[loginIndex]._eventsList.length==1){
   i=0;
@@ -23,17 +16,20 @@ else{i=getClickEventIndex();}
   let date= accountList._accountList[loginIndex]._eventsList[i]._date;
   let starttime=accountList._accountList[loginIndex]._eventsList[i]._startTime;
   let endtime=accountList._accountList[loginIndex]._eventsList[i]._endTime;
-  //let participants=accountList._accountList[loginIndex]._eventsList[i]._participants;
-let participants=1;
+  let participants=accountList._accountList[loginIndex]._eventsList[i]._participants;
+
 let avatars=["images/BeeAvatar-Yellow.png","images/BeeAvatar-Blue.png","images/BeeAvatar-Green.png","images/BeeAvatar-Pink.png"]
 let people=""
-for (i=0;i<participants;i++) //need to get length
+
+if (participants!=null){
+for (i=0;i<participants.length;i++)
 {
   people+=`
   <tr>
-  <td class="image"> <img src="${avatars[i]}" style="width: 8%">  &nbsp  &nbsp ${"participant[i] name"} </td>
+  <td class="image"> <img src="${avatars[i]}" style="width: 8%">  &nbsp  &nbsp ${participants[i]._name} </td>
   </tr> `
 
+}
 }
 
 
@@ -91,17 +87,40 @@ ${people}
 <br>
 `;
 
+let start="";
+if (starttime[0]==0){
+  start=parseInt(starttime[1]);
 
-for (i=starttime[1];i<=endtime;i++){
+}
+
+else {
+  start=  parseInt(starttime[0]+starttime[1]);
+
+}
+
+let end="";
+
+if (endtime[0]==0){
+  end=parseInt(endtime[1]);
+  }
+  
+  else {
+    end=parseInt(endtime[0]+ endtime[1]);
+   
+  }
+
+ 
+for (i=start;i<=end;i++){
       
   document.getElementById(`cell${i}`).setAttribute("class", "busy");
+
 }
 
 let besttime=document.getElementById("besttime")
 
-besttime.innerHTML=`<span style="font-size: 17px;color:#515363; font-family: 'Inter', sans-serif; text-align: left;"> The best time to meet is at : </span> ${starttime} `
+besttime.innerHTML=`<span style="font-size: 17px;color:#515363; font-family: 'Inter', sans-serif; text-align: left;"> The best time to meet is at : </span> ${starttime}  `
+
 
 let eventdate=document.getElementById("event-date");
 eventdate.innerHTML=`<p style="  font-family: 'Inter', sans-serif;font-size: 23px;line-height: 27.84px;color: #071773;"> ${eventname} - ${date} </p>` ;
 
-document.getElementById("cell1").setAttribute("class", "busy");
