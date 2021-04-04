@@ -5,6 +5,7 @@ const INDEX_KEY="index";
 const ACCOUNT_LIST_KEY="accountList";
 const FNAME_KEY="fname";
 const LNAME_KEY="lname";
+const LOGIN_INDEX_KEY="loginIndex"
 
 class Account
 {
@@ -149,6 +150,18 @@ function updateLname(lname)
   }
 }
 
+function updateLoginIndex(index)
+{
+  if (typeof(Storage) !== "undefined")
+  {
+    localStorage.setItem(`${LOGIN_INDEX_KEY}`,JSON.stringify(index));
+  }
+  else
+  {
+    console.log("localStorage is not supported by current browser.");
+  }
+}
+
 function getIndex()
 {
   let data = JSON.parse(localStorage.getItem(`${INDEX_KEY}`));
@@ -174,6 +187,12 @@ function getFname()
 function getLname()
 {
   let data = JSON.parse(localStorage.getItem(`${LNAME_KEY}`));
+  return data;
+}
+
+function getIndex()
+{
+  let data = JSON.parse(localStorage.getItem(`${LOGIN_INDEX_KEY}`));
   return data;
 }
 

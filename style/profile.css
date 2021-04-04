@@ -1,0 +1,50 @@
+body:not(nav){
+    background: #F4F7FF;;
+   font-family: 'Inter', sans-serif;
+}
+
+.mdl-button{
+    color:#071773;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 21px;
+    text-transform: capitalize;
+}
+
+.section1 {
+    background-color: white;
+    background-position: right bottom, left top, right top, left bottom;
+    margin-left: 3cm;
+    margin-right: 3cm;
+    border-radius: 5mm;
+    height: 15cm;
+    text-align-last: left;
+    
+}
+
+#footnote{
+    background-color: white;
+    color:#071773;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 21px;
+    margin-top: 5mm;
+    height: 2.1cm
+  }
+  
+  #copyright{
+    margin-left: 3cm;
+  }
+
+  #profile_header{
+    margin-left: 2cm;
+    font-family: 'Circular Std Book', Arial, sans-serif;
+    font-size: 56px;
+    line-height: normal;
+    color: #071773;
+  }
+
+  #my-detail{
+      margin-left: 2cm;
+
+  }
