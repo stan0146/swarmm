@@ -12,146 +12,195 @@
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+  <!--Fonts-->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style/nav.css">
+  <link rel="stylesheet" href="style/index.css">
   <title>Swarmm</title>
 </head>
 
 <body>
-  <!-- Always shows a header, even in smaller screens. (FIXED HEADER) -->
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header class="mdl-layout__header">
-      <div class="mdl-layout__header-row">
-        <!-- Title -->
-        <span class="mdl-layout-title">
-          <a class="mdl-navigation__link" href="index.html">
-            <h3>Swarmm</h3>
-          </a>
-        </span>
-        <!-- Add spacer, to align navigation to the right -->
-        <div class="mdl-layout-spacer"></div>
-        <!-- Navigation. We hide it in small screens. -->
-        <nav class="mdl-navigation mdl-layout--large-screen-only">
-          <a class="mdl-navigation__link" href="profile.html">Profile</a>
-          <a class="mdl-navigation__link" href="allEvents.html">All events</a>
-          <a class="mdl-navigation__link" href="createEvent.html">Create new event</a>
-          <a class="mdl-navigation__link" href="login.html">Log in</a>
-          <a class="mdl-navigation__link" href="createAccount.html">Register</a>
-        </nav>
+  <nav>
+    <div class="nav-bar">
+      <a href="indexlogged.html">
+        <h1 class="nav-header"><b>swarm</b></h1>
+      </a>
+      <div class="nav-links">
+        <ul>
+          <li>
+            <div class="logout">
+              <button id="show-dialog" type="button" class="mdl-button">Log out</button>
+              <dialog class="mdl-dialog">
+                <h4 class="mdl-dialog__title">Are you sure?</h4>
+                <div class="mdl-dialog__content">
+                  <p>
+                    Beecause we'll miss you
+                  </p>
+                </div>
+                <div class="mdl-dialog__actions">
+                  <a href="index.html">
+                    <button type="button" class="mdl-button">Log out</button>
+                  </a>
+
+                  <button type="button" class="mdl-button close">Cancel</button>
+                </div>
+              </dialog>
+              <script>
+                var dialog = document.querySelector('dialog');
+                var showDialogButton = document.querySelector('#show-dialog');
+                if (!dialog.showModal) {
+                  dialogPolyfill.registerDialog(dialog);
+                }
+                showDialogButton.addEventListener('click', function () {
+                  dialog.showModal();
+                });
+                dialog.querySelector('.close').addEventListener('click', function () {
+                  dialog.close();
+                });
+              </script>
+            </div>
+          </li>
+          <li>
+            <a href="profile.html">
+              <button class="useracc">My profile</button>
+            </a>
+          </li>
+
+          <li>
+            <a href="allEvents.html">
+              <button class="summaryevents">My events</button>
+            </a>
+          </li>
+
+
+
+        </ul>
       </div>
-    </header>
-    <div class="mdl-layout__drawer">
-      <span class="mdl-layout-title">Swarmm</span>
-      <nav class="mdl-navigation">
-        <a class="mdl-navigation__link" href="profile.html">Profile</a>
-        <a class="mdl-navigation__link" href="allEvents.html">All events</a>
-        <a class="mdl-navigation__link" href="createEvent.html">Create new event</a>
-        <a class="mdl-navigation__link" href="login.html">Log in</a>
-        <a class="mdl-navigation__link" href="createAccount.html">Register</a>
-      </nav>
+
     </div>
-    <main class="mdl-layout__content">
-      <!-- top grid for event name and particpants-->
-      <div class="mdl-grid">
-        <!-- empty grid for formatting-->
-        <div class="mdl-cell mdl-cell--1-col"></div>
-        <div class="mdl-cell mdl-cell--4-col">
-          <h1>Create new event</h1>
-          <label for="eventname">Event Name:</label>
-          <input type="text" id="eventname" name="eventname"><br><br>
-        </div>
-        <div class="mdl-cell mdl-cell--6-col" style="margin-top: 40px;">
-          <!-- participants -->
-          <div class="row">
-            <div id="bees" style="float: left;">
-              <img src="images/BeeAvatar-Yellow.png" alt="Working bee" style="width: 100px; height: 100px;">
-            </div>
-            <div id="addBee" style="float: right;">
-              <!-- FAB button -->
-              <button class="mdl-button mdl-js-button mdl-button--fab" id="addParticipant" onclick="addParticipant()">
-                <i class="material-icons">add</i>
-              </button>
-              <label for="addParticipant">Add participant</label>
-            </div>
+  </nav>
+  <br><br><br><br><br><br>
+  <main class="mdl-layout__content">
+    <!-- top grid for event name and particpants-->
+    <div class="mdl-grid">
+      <!-- empty grid for formatting-->
+      <div class="mdl-cell mdl-cell--1-col"></div>
+      <div class="mdl-cell mdl-cell--4-col">
+        <h1>Create new event</h1>
+        <label for="eventname">Event Name:</label>
+        <input type="text" id="eventname" name="eventname"><br><br>
+      </div>
+      <div class="mdl-cell mdl-cell--6-col" style="margin-top: 40px;">
+        <!-- participants -->
+        <div class="row">
+          <div id="bees" style="float: left;">
+            <img src="images/BeeAvatar-Yellow.png" alt="Working bee" style="width: 100px; height: 100px;">
+          </div>
+          <div id="addBee" style="float: right;">
+            <!-- FAB button -->
+            <button class="mdl-button mdl-js-button mdl-button--fab" id="addParticipant" onclick="addParticipant()">
+              <i class="material-icons">add</i>
+            </button>
+            <label for="addParticipant">Add participant</label>
           </div>
         </div>
       </div>
-      <div class="mdl-grid">
-        <!-- empty grid for formatting-->
-        <div class="mdl-cell mdl-cell--1-col"></div>
-        <div class="mdl-cell mdl-cell--4-col">
-          <label for="eventdate">Choose your date</label><br><br>
-          <!-- calender insert-->
-          <!-- need help with the calender date picker!-->
-          <div id="datepicker"></div>
-          <br>
-          <div class="mdl-textfield mdl-js-textfield">
-            <label for="eventtime">Choose your meeting hours</label><br>
-            <div class="title">Start time</div>
-            <input class="mdl-textfield__input" type="time" id="starttime">
-            <label class="mdl-textfield__label" for="time"></label>
-          </div><br>
-          <input type="submit" value="Create new event" onclick="createNewEvent()">
+    </div>
+    <div class="mdl-grid">
+      <!-- empty grid for formatting-->
+      <div class="mdl-cell mdl-cell--1-col"></div>
+      <div class="mdl-cell mdl-cell--4-col">
+        <label for="eventdate">Choose your date</label><br><br>
+        <!-- calender insert-->
+        <!-- need help with the calender date picker!-->
+        <div id="datepicker"></div>
+        <br>
+        <label for="eventtime">Choose your meeting hours</label><br>
+        <div class="mdl-textfield mdl-js-textfield">
+          <div class="title">Start time</div>
+          <input class="mdl-textfield__input" type="time" id="starttime" style="float: left;">
+          <label class="mdl-textfield__label" for="time"></label>
         </div>
-        <!-- right grid: choose unavailability, choose meeting hours-->
-        <div class="mdl-cell mdl-cell--6-col">
-          <!-- availability -->
-          <label for="availability">Choose your unavailability</label><br><br>
-          <div id="unavailability"></div>
-          <div id="tableSelect" class="selectTimes">
-            <table class="fixed_date">
-              <tr style="height: 300px;">
-                <!-- <th scope="row">Sat Apr 3</th> -->
-                <td class="time" id="cell00" onclick="fill()">12:00 am </td>
-                <td class="time" id="cell01" onclick="fill()">1:00 am</td>
-                <td class="time" id="cell02" onclick="fill()">2:00 am</td>
-                <td class="time" id="cell03" onclick="fill()">3:00 am</td>
-                <td class="time" id="cell04" onclick="fill()">4:00 am</td>
-                <td class="time" id="cell05" onclick="fill()">5:00 am</td>
-                <td class="time" id="cell06" onclick="fill()">6:00 am</td>
-                <td class="time" id="cell07" onclick="fill()">7:00 am</td>
-                <td class="time" id="cell08" onclick="fill()">8:00 am</td>
-                <td class="time" id="cell09" onclick="fill()">9:00 am</td>
-                <td class="time" id="cell10" onclick="fill()">10:00 am</td>
-                <td class="time" id="cell11" onclick="fill()">11:00 am</td>
-                <td class="time" id="cell12" onclick="fill()">12:00 am</td>
-                <td class="time" id="cell13" onclick="fill()">1:00 pm</td>
-                <td class="time" id="cell14" onclick="fill()">2:00 pm</td>
-                <td class="time" id="cell15" onclick="fill()">3:00 pm</td>
-                <td class="time" id="cell16" onclick="fill()">4:00 pm</td>
-                <td class="time" id="cell17" onclick="fill()">5:00 pm</td>
-                <td class="time" id="cell18" onclick="fill()">6:00 pm</td>
-                <td class="time" id="cell19" onclick="fill()">7:00 pm</td>
-                <td class="time" id="cell20" onclick="fill()">8:00 pm</td>
-                <td class="time" id="cell21" onclick="fill()">9:00 pm</td>
-                <td class="time" id="cell22" onclick="fill()">10:00 pm</td>
-                <td class="time" id="cell23" onclick="fill()">11:00 pm</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div class="mdl-cell mdl-cell--1-col"></div>
+        <div class="mdl-textfield mdl-js-textfield">
+          <div class="title">End time</div>
+          <input class="mdl-textfield__input" type="time" id="endtime" style="float: right;">
+          <label class="mdl-textfield__label" for="time"></label>
+        </div><br>
+        <input type="submit" value="Create new event" onclick="createNewEvent()">
       </div>
+      <!-- right grid: choose unavailability, choose meeting hours-->
+      <div class="mdl-cell mdl-cell--6-col">
+        <!-- availability -->
+        <label for="availability">Choose your unavailability</label><br><br>
+        <div id="unavailability"></div>
+        <div id="tableSelect" class="selectTimes">
+          <table class="fixed_date">
+            <tr style="height: 300px;">
+              <!-- <th scope="row">Sat Apr 3</th> -->
+              <td class="time" id="cell00" onclick="fill()">12:00 am </td>
+              <td class="time" id="cell01" onclick="fill()">1:00 am</td>
+              <td class="time" id="cell02" onclick="fill()">2:00 am</td>
+              <td class="time" id="cell03" onclick="fill()">3:00 am</td>
+              <td class="time" id="cell04" onclick="fill()">4:00 am</td>
+              <td class="time" id="cell05" onclick="fill()">5:00 am</td>
+              <td class="time" id="cell06" onclick="fill()">6:00 am</td>
+              <td class="time" id="cell07" onclick="fill()">7:00 am</td>
+              <td class="time" id="cell08" onclick="fill()">8:00 am</td>
+              <td class="time" id="cell09" onclick="fill()">9:00 am</td>
+              <td class="time" id="cell10" onclick="fill()">10:00 am</td>
+              <td class="time" id="cell11" onclick="fill()">11:00 am</td>
+              <td class="time" id="cell12" onclick="fill()">12:00 am</td>
+              <td class="time" id="cell13" onclick="fill()">1:00 pm</td>
+              <td class="time" id="cell14" onclick="fill()">2:00 pm</td>
+              <td class="time" id="cell15" onclick="fill()">3:00 pm</td>
+              <td class="time" id="cell16" onclick="fill()">4:00 pm</td>
+              <td class="time" id="cell17" onclick="fill()">5:00 pm</td>
+              <td class="time" id="cell18" onclick="fill()">6:00 pm</td>
+              <td class="time" id="cell19" onclick="fill()">7:00 pm</td>
+              <td class="time" id="cell20" onclick="fill()">8:00 pm</td>
+              <td class="time" id="cell21" onclick="fill()">9:00 pm</td>
+              <td class="time" id="cell22" onclick="fill()">10:00 pm</td>
+              <td class="time" id="cell23" onclick="fill()">11:00 pm</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div class="mdl-cell mdl-cell--1-col"></div>
+    </div>
 
-      <head>
-        <style>
-          table {
-            border-collapse: collapse;
-          }
+    <head>
+      <style>
+        table {
+          border-collapse: collapse;
+        }
 
-          td,
-          th {
-            border: 1px solid black;
-            padding: 3px;
-            text-align: center;
-          }
+        td,
+        th {
+          border: 1px solid black;
+          padding: 3px;
+          text-align: center;
+        }
 
-          th {
-            font-weight: bold;
-            background-color: #E6E6E6;
-          }
-        </style>
-      </head>
-  </div>
+        th {
+          font-weight: bold;
+          background-color: #E6E6E6;
+        }
+      </style>
+    </head>
+    </div>
   </main>
+  <div id="footnote">
+    <br>
+    <p id="copyright"> © 2021 Swarm. All rights reserved.</p>
+
   </div>
   <script>
     unavailability = [];
@@ -159,7 +208,7 @@
 
       id_info = event.target;
       id = id_info.id;
-      index = id.slice(4,6);
+      index = id.slice(4, 6);
       time = index + ":00";
       unavailability.push(time);
       console.log(unavailability);
