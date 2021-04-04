@@ -130,7 +130,12 @@ th[scope=row] {
     width:100%;
     display:block;
  }
-
+table {
+    border-top-left-radius: 26mm;
+    border-top-right-radius: 26mm;
+    border-bottom-left-radius: 26mm;
+    border-bottom-right-radius: 26mm;
+}
 td{
     width: 60px;
     vertical-align: top;
