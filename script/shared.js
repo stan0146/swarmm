@@ -36,9 +36,9 @@ class Account
       return this._eventsList;
     }
 
-    addEvent(eventName, date, unavailability, startTime, participants)
+    addEvent(eventName, date, unavailability, startTime, endTime, participants)
     {
-      let event = new Meeting(eventName, date, unavailability, startTime, participants)
+      let event = new Meeting(eventName, date, unavailability, startTime, endTime, participants)
       this._eventsList.push(event);
     }
 
