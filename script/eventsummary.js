@@ -18,10 +18,11 @@ accountList.fromData(list);
   let starttime=accountList._accountList[loginIndex]._eventsList[i]._startTime;
   let endtime=21
   //let endtime=accountList._accountList[loginIndex]._eventsList[i]._endTime;;
-  let participants=accountList._accountList[loginIndex]._eventsList[i]._participants;
+  //let participants=accountList._accountList[loginIndex]._eventsList[i]._participants;
+let participants=1;
 let avatars=["images/BeeAvatar-Yellow.png","images/BeeAvatar-Blue.png","images/BeeAvatar-Green.png","images/BeeAvatar-Pink.png"]
 let people=""
-for (i=0;i<participants.length;i++)
+for (i=0;i<participants;i++) //need to get length
 {
   people+=`
   <tr>
@@ -93,7 +94,7 @@ for (i=starttime[1];i<=endtime;i++){
 
 let besttime=document.getElementById("besttime")
 
-besttime.innerHTML=`<span style="font-size: 17px;color:#515363; font-family: 'Inter', sans-serif; text-align: left;"> The best time to meet is at : </span> ${starttime}:00am `
+besttime.innerHTML=`<span style="font-size: 17px;color:#515363; font-family: 'Inter', sans-serif; text-align: left;"> The best time to meet is at : </span> ${starttime} `
 
 let eventdate=document.getElementById("event-date");
 eventdate.innerHTML=`<p style="  font-family: 'Inter', sans-serif;font-size: 23px;line-height: 27.84px;color: #071773;"> ${eventname} - ${date} </p>` ;
