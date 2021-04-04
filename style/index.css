@@ -29,7 +29,7 @@ body:not(nav) {
     font-weight: 500;
     font-size: 34px;
     line-height: 120%;
-    margin-left: 20cm;
+    text-align: center;
     color: #071773;
 }
 
