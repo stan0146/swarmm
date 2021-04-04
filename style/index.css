@@ -11,6 +11,16 @@ body:not(nav) {
     top: 2mm;
 }
 
+.floatRight{
+    float:right;
+    margin-right: 120px;
+}
+
+.floatLeft{
+    float:left;
+    margin-left: 120px;
+}
+
 /* H1 - Poppins Medium 64px */
 .heading1 {
     font-family: 'Poppins', sans-serif;
@@ -18,7 +28,7 @@ body:not(nav) {
     font-weight: 500;
     font-size: 64px;
     line-height: 120%;
-    margin-left: 3cm;
+    margin-left: 120px;
     color: #071773;
 }
 
@@ -47,16 +57,11 @@ body:not(nav) {
     border-radius: 26px;
     height: 52px;
     width: 180px;
-    left: 300px;
-    right: 1200px;
     border-width: 0px;
     font-family: 'Inter', sans-serif;
     font-size: 17px;
     line-height: 21px;
-    
-
-    
-    
+    margin-top: 20px;
     }
     
 .signup a{
@@ -83,6 +88,7 @@ body:not(nav) {
     background-color:#F4F7FF;
     background-position: right bottom, left top;
     height:19cm;
+    height: 85vh;
     
 }
 
@@ -96,7 +102,7 @@ body:not(nav) {
 }
 
 #position{
-    margin-left: 3cm;
+    margin-left: 120px;
 }
 
 #footnote{
