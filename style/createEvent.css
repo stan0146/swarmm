@@ -105,8 +105,8 @@ input[type=text]{
   table {
     border-collapse: separate;
     border: 1px #E3E3E3;
-    border-radius:6px;
-    -moz-border-radius:6px;
+    border-radius:26mm;
+    -moz-border-radius:26mm;
 }
 .busy{
     background-color: #FDB433;
@@ -150,23 +150,3 @@ table tr th:last-child,
 table tr td:last-child {
   border-right: 1px solid #E3E3E3;
 }
-
-/* top-left border-radius */
-table tr:first-child th:first-child {
-    border-top-left-radius: 26mm;
-  }
-  
-  /* top-right border-radius */
-  table tr:first-child th:last-child {
-    border-top-right-radius: 26mm;
-  }
-  
-  /* bottom-left border-radius */
-  table tr:last-child td:first-child {
-    border-bottom-left-radius: 26mm;
-  }
-  
-  /* bottom-right border-radius */
-  table tr:last-child td:last-child {
-    border-bottom-right-radius: 26mm;
-  }
