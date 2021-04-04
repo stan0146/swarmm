@@ -46,6 +46,8 @@ body:not(nav) {
     font-family: 'Inter', sans-serif;
     font-size: 17px;
     line-height: 21px;
+    margin-left: 3cm;
+    color: #515363;
 }
 
 .signup{
@@ -86,7 +88,7 @@ body:not(nav) {
 .section1{
     background-color:#F4F7FF;
     background-position: right bottom, left top;
-    height: 85vh;
+    height:19cm;
     
 }
 

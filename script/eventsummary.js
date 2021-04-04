@@ -3,7 +3,7 @@ let eventdummy=[{
         date: "12/04/2021",
         starttime: "1",
         endtime: "4",
-        participants: "2" }
+        participants: ["cindy","bob","glen"]}
         ]   
 
 
@@ -13,6 +13,18 @@ let date= eventdummy[index].date;
 let starttime=eventdummy[index].starttime;
 let endtime=eventdummy[index].endtime;
 let participants=eventdummy[index].participants;
+
+let avatars=["images/BeeAvatar-Blue.png","images/BeeAvatar-Pink.png","images/BeeAvatar-Green.png","images/BeeAvatar-Yellow.png"]
+let people=""
+for (i=0;i<participants.length;i++)
+{
+  people+=`
+  <tr>
+  <td class="image"> <img src="${avatars[i]}" style="width: 8%">  &nbsp  &nbsp ${participants[i]} </td>
+  </tr> `
+
+}
+
 
 
 let section=document.getElementById("section22")
@@ -57,15 +69,9 @@ section.innerHTML=`      <br>
     </tr>
   </table>
   
-<h4 style="font-family: 'Inter', sans-serif;font-size: 23px;line-height: 27.84px;color: #071773;">Participants</h4>
+<h4 style="font-family: 'Inter', sans-serif;font-size: 23px;line-height: 27.84px;color: #071773;">People</h4>
   <table>
-    <tr>
-      <td class="image"> <img src="images/BeeAvatar-Blue.png" style="width: 8%">  &nbsp  &nbsp Bob </td>
-    </tr>
-    
-    <tr>
-      <td class="image"> <img src="images/BeeAvatar-Pink.png"style="width: 8%;">  &nbsp  &nbsp Cindy  </td>
-    </tr>
+${people}
   </table>
   
 
@@ -82,7 +88,7 @@ for (i=starttime;i<=endtime;i++){
 
 let besttime=document.getElementById("besttime")
 
-besttime.innerHTML=`<span style="font-size: 17px;color:#515363; font-family: 'Inter', sans-serif;"> The best time to meet is at : </span> ${starttime}:00am `
+besttime.innerHTML=`<span style="font-size: 17px;color:#515363; font-family: 'Inter', sans-serif; text-align: left;"> The best time to meet is at : </span> ${starttime}:00am `
 
 let eventdate=document.getElementById("event-date");
 eventdate.innerHTML=`<p style="  font-family: 'Inter', sans-serif;font-size: 23px;line-height: 27.84px;color: #071773;"> ${eventname} - ${date} </p>` ;

@@ -38,7 +38,7 @@ function login_to(){
     if (success==true){
         alert('Log in successful')
 
-        window.location.href = "profile.html";
+        window.location.href = "allEvents.html";
     }
 
     else{
