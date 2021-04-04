@@ -19,7 +19,7 @@ function email() {
 
 
 function link() {
-  window.location = "profile.html";
+  window.location = "events.html";
 }
 
 function click_signup() {

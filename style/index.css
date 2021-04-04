@@ -3,6 +3,13 @@ body:not(nav){
    font-family: 'Inter', sans-serif;
 }
 
+.mdl-button{
+    color:#071773;
+    font-family: 'Inter', sans-serif;
+    font-size: 17px;
+    line-height: 21px;
+    text-transform: capitalize;
+}
 
 .heading1 {
     font-family: 'Circular Std Book', Arial, sans-serif;
