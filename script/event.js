@@ -6,32 +6,56 @@ function createNewEvent() {
     let date = document.getElementById("datepicker").value;
     let unavailability = document.getElementById("unavailability").value; // shows as array of hours during day e.g [4, 2, 12, 23]
     let meetingStart = document.getElementById("starttime").value;
+    let meetingEnd = document.getElementById("endtime").value;
     let participants = JSON.parse(localStorage.getItem(PARTICIPANTS_KEY))// participants from local storage
 
     accountList.fromData(JSON.parse(localStorage.getItem(ACCOUNT_DATA_KEY)));
     // mkae sure not empty (except participants)
-    if (eventName == "" || date == "" || unavailability == "" || meetingStart == "") {
+    if (eventName == "" || date == "" || unavailability == "" || meetingStart == "" || meetingEnd == "") {
         alert('Please fill in all requirments.');
     }
     else {
         //put meeting times in 24 hour formate (i.e. 00:00)
         meetingStart += ":00";
+        meetingEnd += ":00";
         //store in glob var eventList as new event
         // point to current user via LOGIN_INDEX_KEY
         let user = accountList.getAccount(Number(JSON.parse(localStorage.getItem(LOGIN_INDEX_KEY))));
         // add event to user's ._eventsList
-        user.addEvent(eventName, date, unavailability, meetingStart, participants);
+        user.addEvent(eventName, date, unavailability, meetingStart, meetingEnd, participants);
         //update
         updateAccountList(accountList);
+        //reset participants and num participants local storage data
+        window.localStorage.removeItem(PARTICIPANTS_KEY);
+        window.localStorage.removeItem(PARTICIPANTS_COUNT);
         //change window to all event (?) page when done
         window.location.href = "events.html";
     }
 
 }
-let participantsList = [];
-let participantCount = 0; //excludes current user
+
+// USer is first participant
+
+
+let participantCount = 0;
+let participantsList = []
 // upon clicking add participant button - adds a working bee :)
 function addParticipant() {
+    if (JSON.parse(localStorage.getItem(PARTICIPANTS_COUNT)) == null) {
+        let userName = `${JSON.parse(localStorage.getItem(FNAME_KEY))} ${JSON.parse(localStorage.getItem(LNAME_KEY))}`;
+        let userEmail = JSON.parse(localStorage.getItem(EMAIL_KEY));
+        let userPartici = new Participant(userName, userEmail);
+        participantsList = [userPartici];
+        participantCount = 1; //includes current user
+        userPartici.beeIcon("BeeAvatar-Yellow.png");
+        if (typeof (Storage) !== "undefined") {
+            localStorage.setItem(`${PARTICIPANTS_COUNT}`, JSON.stringify(participantCount));
+            localStorage.setItem(`${PARTICIPANTS_KEY}`, JSON.stringify(participantsList));
+        }
+        else {
+            console.log("localStorage is not supported by current browser.");
+        }
+    }
     //iterate num of participants in local storage
     participantCount += 1;
     if (typeof (Storage) !== "undefined") {
@@ -48,7 +72,7 @@ function addParticipant() {
 
     //add another bee icon
     //list of bees
-    let bees = ["BeeAvatar-Blue.png", "BeeAvatar-Green.png", "BeeAvatar-Pink.png"];
+    let bees = ["BeeAvatar-Yellow.png", "BeeAvatar-Blue.png", "BeeAvatar-Green.png", "BeeAvatar-Pink.png"];
     // get current num of participants
     if (participantCount < bees.length) {
         let beesDisplayRef = document.getElementById("bees");
