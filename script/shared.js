@@ -27,11 +27,18 @@ class Account
     getPassword(){return this._password}
     getFname() {return this._fname}
     getLname(){return this._lname;}
+    getEventsList() {return this._eventsList;}
 
     //method: get user's events array
     userEvents()
     {
       return this._eventsList;
+    }
+
+    addEvent(eventName, date, unavailability, startTime, participants)
+    {
+      let event = new Meeting(eventName, date, unavailability, startTime, participants)
+      this._eventsList.push(event);
     }
 
     removeEvent(index)
@@ -40,9 +47,9 @@ class Account
     }
 
     fromData(data){
-        this._index=data._index
-        this._email=data._email
-        this._password=data._password
+        this._index=data._index;
+        this._email=data._email;
+        this._password=data._password;
         this._fname=data._fname;
         this._lname=data._lname;
         this._eventsList = data._eventsList;
@@ -87,7 +94,7 @@ class AccountList
 }
 
 //EVENTS CLASSES
-class Event
+class Meeting //CHANGED FROM Event BECAUSE EVENT IS ALREADY A JS OBJECT
 {
     constructor(eventName, date, unavailability, startTime, participants){
         this._eventName = eventName;
@@ -109,6 +116,11 @@ class Event
     set startTime(newTime){this._startTime = newTime;}
     set participants(newparticipants){this._participants = newparticipants;}
 
+    addParticipant(name, email, beeIcon){
+      let person = new Participant(name, email, beeIcon);
+      this._participants.push(person);
+    }
+
     fromData(data){
         this._eventName = data._eventName;
         this._date = data._date;
@@ -119,12 +131,28 @@ class Event
 
 }
 
+class Participant
+{
+  constructor(name, email)
+  {
+    this._name = name;
+    this._email = email;
+    this._beeIcon = "";
+  }
+  beeIcon(icon)
+  {
+    this._beeIcon = icon;
+  }
+
+}
+/*
 class EventsList
 {
-    constructor(){
+    constructor(index){
+        this._index = index;
         this._eventsList = [];
     }
-    
+    getListIndex() {return this._index;}
     getEventsList(){return this._eventsList;}
     getEvent(index){return this._eventsList[index];}
 
@@ -153,10 +181,11 @@ class EventsList
     }
 
 }
+*/
 
 //GLOBAL VARS
 let accountList= new AccountList;
-let eventList = new EventsList;
+//let eventList = new EventsList;
     
 //FUNCTIONS RELATED TO ACCOUNTS
 function updateAccountList(accountList)
@@ -284,6 +313,18 @@ function getLoginIndex()
 }
 
 // FUNCTIONS RELATED TO EVENTS
+
+function updateParticipantList(list){
+  if (typeof(Storage) !== "undefined")
+  {
+    localStorage.setItem(`${PARTICIPANTS_KEY}`,JSON.stringify(list));
+  }
+  else
+  {
+    console.log("localStorage is not supported by current browser.");
+  }
+}
+
 function getEventsList()
 {
   let data = JSON.parse(localStorage.getItem(`${EVENT_INDEX}`));
@@ -295,17 +336,6 @@ function updateEventIndex(index)
   if (typeof(Storage) !== "undefined")
   {
     localStorage.setItem(`${EVENT_INDEX}`,JSON.stringify(index));
-  }
-  else
-  {
-    console.log("localStorage is not supported by current browser.");
-  }
-}
-function updateEventsList(eventsList)
-{
-    if (typeof(Storage) !== "undefined")
-  {
-    localStorage.setItem(`${EVENT_LIST}`,JSON.stringify(eventsList));
   }
   else
   {

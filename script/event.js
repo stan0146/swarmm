@@ -8,21 +8,23 @@ function createNewEvent() {
     let meetingStart = document.getElementById("starttime").value;
     let participants = JSON.parse(localStorage.getItem(PARTICIPANTS_KEY))// participants from local storage
 
-    // mkae sure not empty
-    if (eventName == "" || date == "" || unavailability == "" || meetingStart == "" || meetingEnd == "") {
+    accountList.fromData(JSON.parse(localStorage.getItem(ACCOUNT_DATA_KEY)));
+    // mkae sure not empty (except participants)
+    if (eventName == "" || date == "" || unavailability == "" || meetingStart == "") {
         alert('Please fill in all requirments.');
     }
     else {
         //put meeting times in 24 hour formate (i.e. 00:00)
         meetingStart += ":00";
-        meetingEnd += ":00";
         //store in glob var eventList as new event
-        eventList.addEvent(eventName, date, unavailability, meetingStart, meetingEnd, participants);
-        //update events list
-        updateEventsList(eventList);
-        console.log("success");
+        // point to current user via LOGIN_INDEX_KEY
+        let user = accountList.getAccount(Number(JSON.parse(localStorage.getItem(LOGIN_INDEX_KEY))));
+        // add event to user's ._eventsList
+        user.addEvent(eventName, date, unavailability, meetingStart, participants);
+        //update
+        updateAccountList(accountList);
         //change window to all event (?) page when done
-        window.location = "events.html";
+        window.location.href = "events.html";
     }
 
 }
@@ -40,64 +42,55 @@ function addParticipant() {
     }
 
     //prompt for participant's email
-    let emailRef = prompt("Please enter email of participant: ");
-    let nameRef = prompt("Please enter name of participant: ");
-    let participant = {name: nameRef, email: emailRef};
-
-    //push participants email to participantsList
-    participantsList.push(participant);
-
-    //store/update participants list in local storage
-    if (typeof (Storage) !== "undefined") {
-        localStorage.setItem(`${PARTICIPANTS_KEY}`, JSON.stringify(participantsList));
-    }
-    else {
-        console.log("localStorage is not supported by current browser.");
-    }
+    let nameRef = prompt("Please enter name of participant: ")
+    let emailRef = prompt("Please enter email of participant: ");;
+    let participant = new Participant(nameRef, emailRef);
 
     //add another bee icon
     //list of bees
     let bees = ["BeeAvatar-Blue.png", "BeeAvatar-Green.png", "BeeAvatar-Pink.png"];
     // get current num of participants
-    let numParticipants = JSON.parse(localStorage.getItem(PARTICIPANTS_COUNT));
-    if (numParticipants < bees.length) {
+    if (participantCount < bees.length) {
         let beesDisplayRef = document.getElementById("bees");
-        beesDisplayRef.innerHTML += `<img src="images/${bees[numParticipants - 1]}" alt="${name}" style="width: 100px; height: 100px;">`;
-    }
-    else
-    {
-        alert("Maximum number of participants has been reached!");
-    }
+        participant.beeIcon(bees[participantCount - 1])
+        beesDisplayRef.innerHTML += `<img src="images/${participant._beeIcon}" alt="${participant._name}" style="width: 100px; height: 100px;">`;
+        //push participants email to participantsList
+        participantsList.push(participant);
+        updateParticipantList(participantsList); //update in local storage and pull later to event
 
-    //add table for new participant
-    let tableRef = document.getElementById("tableSelect");
-    tableRef.innerHTML += `<br><br>
-    <table class="fixed_date">
+        //add table for new participant
+        let tableRef = document.getElementById("tableSelect");
+        tableRef.innerHTML += `<br><br>
+        <table class="fixed_date">
               <tr style="height: 300px;">
-                <td class="time" id="cell00${numParticipants}" onclick="fill()">12:00 am </td>
-                <td class="time" id="cell01${numParticipants}" onclick="fill()">1:00 am</td>
-                <td class="time" id="cell02${numParticipants}" onclick="fill()">2:00 am</td>
-                <td class="time" id="cell03${numParticipants}" onclick="fill()">3:00 am</td>
-                <td class="time" id="cell04${numParticipants}" onclick="fill()">4:00 am</td>
-                <td class="time" id="cell05${numParticipants}" onclick="fill()">5:00 am</td>
-                <td class="time" id="cell06${numParticipants}" onclick="fill()">6:00 am</td>
-                <td class="time" id="cell07${numParticipants}" onclick="fill()">7:00 am</td>
-                <td class="time" id="cell08${numParticipants}" onclick="fill()">8:00 am</td>
-                <td class="time" id="cell09${numParticipants}" onclick="fill()">9:00 am</td>
-                <td class="time" id="cell10${numParticipants}" onclick="fill()">10:00 am</td>
-                <td class="time" id="cell11${numParticipants}" onclick="fill()">11:00 am</td>
-                <td class="time" id="cell12${numParticipants}" onclick="fill()">12:00 am</td>
-                <td class="time" id="cell13${numParticipants}" onclick="fill()">1:00 pm</td>
-                <td class="time" id="cell14${numParticipants}" onclick="fill()">2:00 pm</td>
-                <td class="time" id="cell15${numParticipants}" onclick="fill()">3:00 pm</td>
-                <td class="time" id="cell16${numParticipants}" onclick="fill()">4:00 pm</td>
-                <td class="time" id="cell17${numParticipants}" onclick="fill()">5:00 pm</td>
-                <td class="time" id="cell18${numParticipants}" onclick="fill()">6:00 pm</td>
-                <td class="time" id="cell19${numParticipants}" onclick="fill()">7:00 pm</td>
-                <td class="time" id="cell20${numParticipants}" onclick="fill()">8:00 pm</td>
-                <td class="time" id="cell21${numParticipants}" onclick="fill()">9:00 pm</td>
-                <td class="time" id="cell22${numParticipants}" onclick="fill()">10:00 pm</td>
-                <td class="time" id="cell23${numParticipants}" onclick="fill()">11:00 pm</td>
+                <td class="time" id="cell00${participantCount}" onclick="fill()">12:00 am </td>
+                <td class="time" id="cell01${participantCount}" onclick="fill()">1:00 am</td>
+                <td class="time" id="cell02${participantCount}" onclick="fill()">2:00 am</td>
+                <td class="time" id="cell03${participantCount}" onclick="fill()">3:00 am</td>
+                <td class="time" id="cell04${participantCount}" onclick="fill()">4:00 am</td>
+                <td class="time" id="cell05${participantCount}" onclick="fill()">5:00 am</td>
+                <td class="time" id="cell06${participantCount}" onclick="fill()">6:00 am</td>
+                <td class="time" id="cell07${participantCount}" onclick="fill()">7:00 am</td>
+                <td class="time" id="cell08${participantCount}" onclick="fill()">8:00 am</td>
+                <td class="time" id="cell09${participantCount}" onclick="fill()">9:00 am</td>
+                <td class="time" id="cell10${participantCount}" onclick="fill()">10:00 am</td>
+                <td class="time" id="cell11${participantCount}" onclick="fill()">11:00 am</td>
+                <td class="time" id="cell12${participantCount}" onclick="fill()">12:00 am</td>
+                <td class="time" id="cell13${participantCount}" onclick="fill()">1:00 pm</td>
+                <td class="time" id="cell14${participantCount}" onclick="fill()">2:00 pm</td>
+                <td class="time" id="cell15${participantCount}" onclick="fill()">3:00 pm</td>
+                <td class="time" id="cell16${participantCount}" onclick="fill()">4:00 pm</td>
+                <td class="time" id="cell17${participantCount}" onclick="fill()">5:00 pm</td>
+                <td class="time" id="cell18${participantCount}" onclick="fill()">6:00 pm</td>
+                <td class="time" id="cell19${participantCount}" onclick="fill()">7:00 pm</td>
+                <td class="time" id="cell20${participantCount}" onclick="fill()">8:00 pm</td>
+                <td class="time" id="cell21${participantCount}" onclick="fill()">9:00 pm</td>
+                <td class="time" id="cell22${participantCount}" onclick="fill()">10:00 pm</td>
+                <td class="time" id="cell23${participantCount}" onclick="fill()">11:00 pm</td>
               </tr>
             </table>`
+    }
+    else {
+        alert("Maximum number of participants has been reached!");
+    }
 }
