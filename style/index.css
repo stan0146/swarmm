@@ -1,9 +1,9 @@
-body:not(nav){
-    background-color:white;
+body:not(nav) {
+   background-color:white;
    font-family: 'Inter', sans-serif;
 }
 
-.mdl-button{
+.mdl-button {
     color:#071773;
     font-family: 'Inter', sans-serif;
     font-size: 17px;
@@ -11,13 +11,26 @@ body:not(nav){
     text-transform: capitalize;
 }
 
+/* H1 - Poppins Medium 64px */
 .heading1 {
-    font-family: 'Poppins', Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
     font-size: 64px;
-    line-height: normal;
+    line-height: 120%;
     margin-left: 3cm;
     color: #071773;
+}
 
+/* H3 - Poppins Medium 34px */
+.heading3 {
+    font-family: 'Poppins', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 120%;
+    margin-left: 20cm;
+    color: #071773;
 }
 
 .body2 {
@@ -68,6 +81,7 @@ body:not(nav){
 .section1{
     background-color:#F4F7FF;
     background-position: right bottom, left top;
+    
 }
 
 #section3{
