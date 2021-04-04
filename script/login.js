@@ -5,14 +5,15 @@ const loginErrorMsg = document.getElementById("login-error-msg");
 function login_to(){
 
     let email = loginForm.email.value;
+ 
     let password = loginForm.password.value;
-    let errormsg=document.getElementById("error_msg");
 
 
     data=getAccountList();
     accountList.fromData(data);
 
     let success=false;
+   
 
     for (i=0;i<accountList._accountList.length;i++)
     {
@@ -20,6 +21,11 @@ function login_to(){
         if (email === accountList._accountList[i]._email && password === accountList._accountList[i]._password) 
         {
             success=true; 
+            
+            updateLoginIndex(i);
+
+            break;
+
         } 
 
         else 
@@ -38,6 +44,8 @@ function login_to(){
     else{
         alert('Incorrect/invalid email or password. Please try again.');
     }
+
+
 }
 
 

@@ -190,7 +190,7 @@ function getLname()
   return data;
 }
 
-function getIndex()
+function getLoginIndex()
 {
   let data = JSON.parse(localStorage.getItem(`${LOGIN_INDEX_KEY}`));
   return data;
