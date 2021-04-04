@@ -85,7 +85,7 @@ function addParticipant() {
         //add table for new participant
         let tableRef = document.getElementById("tableSelect");
         tableRef.innerHTML += `<br><br>
-        <table class="fixed_date">
+        <table class="fixed_date" style="width:100%;">
               <tr style="height: 300px;">
                 <td class="time" id="cell00${participantCount}" onclick="fill()">12:00 am </td>
                 <td class="time" id="cell01${participantCount}" onclick="fill()">1:00 am</td>
