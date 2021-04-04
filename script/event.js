@@ -20,8 +20,9 @@ function createNewEvent() {
         eventList.addEvent(eventName, date, unavailability, meetingStart, meetingEnd);
         //update events list
         updateEventsList(eventList);
-
-
+        console.log("success");
+        //change window to all event (?) page when done
+        window.location = "events.html";
     }
 
 }
