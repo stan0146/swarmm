@@ -1,27 +1,30 @@
-const EVENT_INDEX = "eventkey";
+const EVENT_INDEX = "eventindex";
+const EVENT_LIST = "eventlist";
 
 class Event
 {
-    constructor(index, eventName, timezone, date, unavailability, startTime, endTime){
-        this._index = index;
+    constructor(eventName, date, unavailability, startTime, endTime){
         this._eventName = eventName;
-        this._timezone = timezone;
         this._date = date;
         this._unavailability = unavailability;
         this._startTime = startTime;
         this._endTime = endTime
     }
-    getIndex() {return this._index;}
     getEventName() {return this._eventName;}
-    getTimeZone() {return this._timezone;}
     getDate() {return this._date;}
     getUnavailability() {return this._unavailability;}
     getStartTime() {return this._startTime;}
     getEndTime() {return this._endTime;}
 
+    //mutators
+    set eventName(newName){this._eventName = newName;}
+    set date(newdate){this._date = newdate;}
+    set unavailability(newunav){this._unavailability = newunav;}
+    set startTime(newTime){this._startTime = newTime;}
+    set endTime(newTime){this._endTime = newTime;}
+
     fromData(data){
         this._eventName = data._eventName;
-        this._timezone = data._timezone;
         this._date = data._date;
         this._unavailability = data._unavailability;
         this._startTime = data._startTime;
@@ -39,9 +42,9 @@ class EventsList
     getEventsList(){return this._eventsList;}
     getEvent(index){return this._eventsList[index];}
 
-    addEvent(index, eventName, timezone, date, unavailability, startTime, endTime)
+    addEvent(eventName, date, unavailability, startTime, endTime)
     {
-        let event = new Event(index, eventName, timezone, date, unavailability, startTime, endTime);
+        let event = new Event(eventName, date, unavailability, startTime, endTime);
         this._eventsList.push(event);
     }
     
@@ -65,10 +68,24 @@ class EventsList
 
 }
 
+// global variable for user's event list
 let eventList = new EventsList()
 
-function getEvent()
+function getEventsList()
 {
   let data = JSON.parse(localStorage.getItem(`${EVENT_INDEX}`));
   return data;
 }
+
+function updateEventIndex(index)
+{
+  if (typeof(Storage) !== "undefined")
+  {
+    localStorage.setItem(`${EVENT_INDEX}`,JSON.stringify(index));
+  }
+  else
+  {
+    console.log("localStorage is not supported by current browser.");
+  }
+}
+
